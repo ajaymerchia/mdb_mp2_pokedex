@@ -9,16 +9,17 @@
 import Foundation
 import UIKit
 
+class FilterButton: UIButton {
+    var isValueFilter: Bool = false
+}
+
 class FilterCellView: UICollectionViewCell {
-    var filterImageButton: UIButton!
+    var filterImageButton: FilterButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        filterImageButton = UIButton(frame: contentView.frame)
+        filterImageButton = FilterButton(frame: contentView.frame)
         contentView.addSubview(filterImageButton)
-
-        
-        
     }
 }

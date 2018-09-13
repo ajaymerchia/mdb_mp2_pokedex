@@ -23,6 +23,9 @@ class WelcomeViewController: UIViewController {
     let PADDING:CGFloat = 20
     var WORKING_SPACE:CGFloat!
     
+    // Search Logic Components
+    var selected_filters: [SearchFilter] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

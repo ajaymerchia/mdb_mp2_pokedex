@@ -37,16 +37,16 @@ extension WelcomeViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.filterImageButton.setImage(UIImage(named: "lite_pokefilter_"+current_filter.lowercased()), for: UIControlState.normal)
         cell.filterImageButton.setImage(UIImage(named: "pokefilter_"+current_filter.lowercased()), for: UIControlState.selected)
         cell.filterImageButton.tag = indexPath.row
-        cell.filterImageButton.addTarget(self, action: #selector(set_filter_state), for: .touchUpInside)
+        cell.filterImageButton.addTarget(self, action: #selector(set_filter_button_state), for: .touchUpInside)
+        if ["attack", "defense", "hp"].contains(current_filter.lowercased()) {
+            cell.filterImageButton.isValueFilter = true
+        }
 
         
         return cell
     }
     
-    @objc func set_filter_state(sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        debugPrint(sender.tag, Pokemon.ALL_POKE_FILTERS[sender.tag])
-    }
+    
     
     
 }
