@@ -10,6 +10,11 @@ import Foundation
 
 class Pokemon {
     
+    static let ALL_POKEMON_TYPES = ["Bug", "Grass", "Dark", "Ground", "Dragon", "Ice", "Electric", "Normal", "Fairy", "Poison", "Fighting", "Psychic", "Fire", "Rock", "Flying", "Steel", "Ghost", "Water"]
+    
+    static let ALL_POKE_FILTERS = ALL_POKEMON_TYPES + ["Attack", "Defense", "HP"]
+    
+    
     /* Note 1: 
        There are 18 different types of Pokemon, and a single Pokemon can inherit multiple types:
             Bug, Grass, Dark, Ground, Dragon, Ice, Electric, Normal, Fairy,
