@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B71AF6F02149C0E900A63FD8 /* WelcomeViewController-collectionviewsrc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AF6EF2149C0E900A63FD8 /* WelcomeViewController-collectionviewsrc.swift */; };
 		B71AF6F22149C35600A63FD8 /* Filter-CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AF6F12149C35600A63FD8 /* Filter-CellView.swift */; };
+		B71AF6F4214A0E7F00A63FD8 /* WelcomeViewController-searchlogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AF6F3214A0E7F00A63FD8 /* WelcomeViewController-searchlogic.swift */; };
 		B733289B214648CD0095BCDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B733289A214648CD0095BCDB /* AppDelegate.swift */; };
 		B733289D214648CE0095BCDB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B733289C214648CE0095BCDB /* WelcomeViewController.swift */; };
 		B73328A0214648CE0095BCDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B733289E214648CE0095BCDB /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		B71AF6EF2149C0E900A63FD8 /* WelcomeViewController-collectionviewsrc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeViewController-collectionviewsrc.swift"; sourceTree = "<group>"; };
 		B71AF6F12149C35600A63FD8 /* Filter-CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filter-CellView.swift"; sourceTree = "<group>"; };
+		B71AF6F3214A0E7F00A63FD8 /* WelcomeViewController-searchlogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeViewController-searchlogic.swift"; sourceTree = "<group>"; };
 		B7332897214648CD0095BCDB /* mdb_mp2_pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdb_mp2_pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B733289A214648CD0095BCDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B733289C214648CE0095BCDB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				B733289C214648CE0095BCDB /* WelcomeViewController.swift */,
+				B71AF6F3214A0E7F00A63FD8 /* WelcomeViewController-searchlogic.swift */,
 				B7E020AC2148AB0700AE82A7 /* WelcomeViewController-initui.swift */,
 				B71AF6EF2149C0E900A63FD8 /* WelcomeViewController-collectionviewsrc.swift */,
 				B71AF6F12149C35600A63FD8 /* Filter-CellView.swift */,
@@ -301,6 +304,7 @@
 				B7E020AF2148B3C100AE82A7 /* brainstorming.swift in Sources */,
 				B73328CB214648E80095BCDB /* PokemonGenerator.swift in Sources */,
 				B7E020AD2148AB0700AE82A7 /* WelcomeViewController-initui.swift in Sources */,
+				B71AF6F4214A0E7F00A63FD8 /* WelcomeViewController-searchlogic.swift in Sources */,
 				B71AF6F22149C35600A63FD8 /* Filter-CellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

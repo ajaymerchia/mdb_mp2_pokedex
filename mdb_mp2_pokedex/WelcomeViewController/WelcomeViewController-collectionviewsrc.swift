@@ -38,8 +38,7 @@ extension WelcomeViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.filterImageButton.setImage(UIImage(named: "pokefilter_"+current_filter.lowercased()), for: UIControlState.selected)
         cell.filterImageButton.tag = indexPath.row
         cell.filterImageButton.addTarget(self, action: #selector(set_filter_state), for: .touchUpInside)
-//        cell.filterImage.image = UIImage(named: "pokefilter_"+current_fivvlter.lowercased())
-//        cell.filterName.text = current_filter
+
         
         return cell
     }
