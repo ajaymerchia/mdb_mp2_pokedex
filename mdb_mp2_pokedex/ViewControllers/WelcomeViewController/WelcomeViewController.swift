@@ -14,10 +14,13 @@ class WelcomeViewController: UIViewController {
     var header_img: UIImageView!
     
     // UIComponents for SelectingFilters
-    var filter_labels: [UILabel] = []
+    var filter_buttons: [FilterButton] = []
+    var filter_collection: [FilterCellView] = []
     var filterCollectionView: UICollectionView!
     
-    // UIComponents for Miscellaneous/Events
+    // UIComponents for Events
+    var filteredSearch: UIButton!
+    var randomizedSearch: UIButton!
     
     // UISpacing Components
     let PADDING:CGFloat = 20
@@ -25,6 +28,8 @@ class WelcomeViewController: UIViewController {
     
     // Search Logic Components
     var selected_filters: [SearchFilter] = []
+    var qualifiedPokemon: [Pokemon] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +38,10 @@ class WelcomeViewController: UIViewController {
         
         //Initialize UI Components
         init_img()
-        init_buttons()
-        init_text()
         init_grid()
+        init_buttons()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

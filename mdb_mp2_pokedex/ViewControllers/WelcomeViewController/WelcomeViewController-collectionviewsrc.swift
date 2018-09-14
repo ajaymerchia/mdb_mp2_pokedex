@@ -40,7 +40,11 @@ extension WelcomeViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.filterImageButton.addTarget(self, action: #selector(set_filter_button_state), for: .touchUpInside)
         if ["attack", "defense", "hp"].contains(current_filter.lowercased()) {
             cell.filterImageButton.isValueFilter = true
+            cell.contentView.addSubview(cell.points_selected)
         }
+        
+        filter_buttons.append(cell.filterImageButton)
+        filter_collection.append(cell)
 
         
         return cell

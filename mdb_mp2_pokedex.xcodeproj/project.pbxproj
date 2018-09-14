@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		B71AF6F02149C0E900A63FD8 /* WelcomeViewController-collectionviewsrc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AF6EF2149C0E900A63FD8 /* WelcomeViewController-collectionviewsrc.swift */; };
 		B71AF6F22149C35600A63FD8 /* Filter-CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AF6F12149C35600A63FD8 /* Filter-CellView.swift */; };
-		B71AF6F4214A0E7F00A63FD8 /* WelcomeViewController-searchlogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AF6F3214A0E7F00A63FD8 /* WelcomeViewController-searchlogic.swift */; };
+		B71AF6F4214A0E7F00A63FD8 /* WelcomeViewController-filtercontrol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AF6F3214A0E7F00A63FD8 /* WelcomeViewController-filtercontrol.swift */; };
 		B71AF6F9214AE5CC00A63FD8 /* SearchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AF6F8214AE5CC00A63FD8 /* SearchFilter.swift */; };
+		B71AF6FB214B2CAC00A63FD8 /* rgba.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AF6FA214B2CAC00A63FD8 /* rgba.swift */; };
+		B71AF701214B5CC800A63FD8 /* WelcomeViewController-launchsearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AF700214B5CC800A63FD8 /* WelcomeViewController-launchsearch.swift */; };
+		B71AF703214B61EB00A63FD8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AF702214B61EB00A63FD8 /* SearchViewController.swift */; };
 		B733289B214648CD0095BCDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B733289A214648CD0095BCDB /* AppDelegate.swift */; };
 		B733289D214648CE0095BCDB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B733289C214648CE0095BCDB /* WelcomeViewController.swift */; };
 		B73328A0214648CE0095BCDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B733289E214648CE0095BCDB /* Main.storyboard */; };
@@ -45,8 +48,14 @@
 /* Begin PBXFileReference section */
 		B71AF6EF2149C0E900A63FD8 /* WelcomeViewController-collectionviewsrc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeViewController-collectionviewsrc.swift"; sourceTree = "<group>"; };
 		B71AF6F12149C35600A63FD8 /* Filter-CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filter-CellView.swift"; sourceTree = "<group>"; };
-		B71AF6F3214A0E7F00A63FD8 /* WelcomeViewController-searchlogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeViewController-searchlogic.swift"; sourceTree = "<group>"; };
+		B71AF6F3214A0E7F00A63FD8 /* WelcomeViewController-filtercontrol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeViewController-filtercontrol.swift"; sourceTree = "<group>"; };
 		B71AF6F8214AE5CC00A63FD8 /* SearchFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilter.swift; sourceTree = "<group>"; };
+		B71AF6FA214B2CAC00A63FD8 /* rgba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rgba.swift; sourceTree = "<group>"; };
+		B71AF6FC214B5A2100A63FD8 /* Gentona Book Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gentona Book Bold.otf"; sourceTree = "<group>"; };
+		B71AF6FD214B5A2100A63FD8 /* Gentona Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gentona Book.otf"; sourceTree = "<group>"; };
+		B71AF6FE214B5A2100A63FD8 /* Gentona Book Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gentona Book Italic.otf"; sourceTree = "<group>"; };
+		B71AF700214B5CC800A63FD8 /* WelcomeViewController-launchsearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeViewController-launchsearch.swift"; sourceTree = "<group>"; };
+		B71AF702214B61EB00A63FD8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B7332897214648CD0095BCDB /* mdb_mp2_pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdb_mp2_pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B733289A214648CD0095BCDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B733289C214648CE0095BCDB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				B7E020AB2148AADC00AE82A7 /* WelcomeViewController */,
+				B71AF704214B61EF00A63FD8 /* SearchViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -114,6 +124,24 @@
 				B71AF6F12149C35600A63FD8 /* Filter-CellView.swift */,
 			);
 			path = EmbeddedViews;
+			sourceTree = "<group>";
+		};
+		B71AF6FF214B5A2600A63FD8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B71AF6FC214B5A2100A63FD8 /* Gentona Book Bold.otf */,
+				B71AF6FE214B5A2100A63FD8 /* Gentona Book Italic.otf */,
+				B71AF6FD214B5A2100A63FD8 /* Gentona Book.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B71AF704214B61EF00A63FD8 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B71AF702214B61EB00A63FD8 /* SearchViewController.swift */,
+			);
+			path = SearchViewController;
 			sourceTree = "<group>";
 		};
 		B733288E214648CD0095BCDB = {
@@ -174,8 +202,10 @@
 		B73328CE214648F30095BCDB /* rsrc */ = {
 			isa = PBXGroup;
 			children = (
+				B71AF6FF214B5A2600A63FD8 /* Fonts */,
 				B73328CA214648E80095BCDB /* pokeData.json */,
 				B73328C9214648E80095BCDB /* Pokemon.swift */,
+				B71AF6FA214B2CAC00A63FD8 /* rgba.swift */,
 				B73328C8214648E70095BCDB /* PokemonGenerator.swift */,
 			);
 			path = rsrc;
@@ -185,9 +215,10 @@
 			isa = PBXGroup;
 			children = (
 				B733289C214648CE0095BCDB /* WelcomeViewController.swift */,
-				B71AF6F3214A0E7F00A63FD8 /* WelcomeViewController-searchlogic.swift */,
 				B7E020AC2148AB0700AE82A7 /* WelcomeViewController-initui.swift */,
 				B71AF6EF2149C0E900A63FD8 /* WelcomeViewController-collectionviewsrc.swift */,
+				B71AF6F3214A0E7F00A63FD8 /* WelcomeViewController-filtercontrol.swift */,
+				B71AF700214B5CC800A63FD8 /* WelcomeViewController-launchsearch.swift */,
 			);
 			path = WelcomeViewController;
 			sourceTree = "<group>";
@@ -328,12 +359,15 @@
 				B73328CC214648E80095BCDB /* Pokemon.swift in Sources */,
 				B733289B214648CD0095BCDB /* AppDelegate.swift in Sources */,
 				B71AF6F02149C0E900A63FD8 /* WelcomeViewController-collectionviewsrc.swift in Sources */,
+				B71AF701214B5CC800A63FD8 /* WelcomeViewController-launchsearch.swift in Sources */,
 				B7E020AF2148B3C100AE82A7 /* brainstorming.swift in Sources */,
 				B71AF6F9214AE5CC00A63FD8 /* SearchFilter.swift in Sources */,
 				B73328CB214648E80095BCDB /* PokemonGenerator.swift in Sources */,
+				B71AF703214B61EB00A63FD8 /* SearchViewController.swift in Sources */,
 				B7E020AD2148AB0700AE82A7 /* WelcomeViewController-initui.swift in Sources */,
-				B71AF6F4214A0E7F00A63FD8 /* WelcomeViewController-searchlogic.swift in Sources */,
+				B71AF6F4214A0E7F00A63FD8 /* WelcomeViewController-filtercontrol.swift in Sources */,
 				B71AF6F22149C35600A63FD8 /* Filter-CellView.swift in Sources */,
+				B71AF6FB214B2CAC00A63FD8 /* rgba.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

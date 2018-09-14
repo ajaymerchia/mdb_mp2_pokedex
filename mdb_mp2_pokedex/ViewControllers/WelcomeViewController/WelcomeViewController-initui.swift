@@ -20,7 +20,19 @@ extension WelcomeViewController {
     }
     
     func init_buttons() {
+        filteredSearch = UIButton(frame: CGRect(x: PADDING, y: filterCollectionView.frame.maxY + 30, width: (view.frame.width-2*PADDING)/2, height: 40))
+        filteredSearch.setTitle("Search", for: .normal)
+        filteredSearch.backgroundColor = .blue
+        filteredSearch.addTarget(self, action: #selector(filterSearch), for: .touchUpInside)
+        view.addSubview(filteredSearch)
         
+        
+        randomizedSearch = UIButton(frame: CGRect(x: filteredSearch.frame.maxX, y: filterCollectionView.frame.maxY + 30, width: (view.frame.width-2*PADDING)/2, height: 40))
+        randomizedSearch.setTitle("Randomize", for: .normal)
+        randomizedSearch.addTarget(self, action: #selector(randomSearch), for: .touchUpInside)
+        randomizedSearch.backgroundColor = .green
+        
+        view.addSubview(randomizedSearch)
     }
     
     func init_text() {

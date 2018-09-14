@@ -41,5 +41,7 @@ class PokemonGenerator {
         return pokemonArray
     }
     
+    static let ALL_POKEMON = getPokemonArray()
+    
     
 }

@@ -39,7 +39,7 @@ extension WelcomeViewController {
             curr_label.numberOfLines = 2
             curr_label.textColor = .black
             curr_label.textAlignment = .center
-            filter_labels.append(curr_label)
+//            filter_labels.append(curr_label)
             view.addSubview(curr_label)
         }
         
