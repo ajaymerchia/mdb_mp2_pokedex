@@ -107,6 +107,9 @@
                         <viewLayoutGuide key="safeArea" id="vRJ-OJ-yjF"/>
                     </view>
                     <navigationItem key="navigationItem" id="58c-iY-EeP"/>
+                    <connections>
+                        <segue destination="GBv-fh-T9Y" kind="show" identifier="Fav2Profile" id="6XQ-VH-XPk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0O-cM-p6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,5 +118,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="kwq-xi-FVD"/>
+        <segue reference="6XQ-VH-XPk"/>
     </inferredMetricsTieBreakers>
 </document>
