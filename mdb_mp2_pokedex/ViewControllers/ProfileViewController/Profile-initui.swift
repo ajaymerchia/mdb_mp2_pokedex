@@ -42,16 +42,51 @@ extension ProfileViewController {
         } else {
             nameImage.image = #imageLiteral(resourceName: "pokeball")
         }
-        
-        
         view.addSubview(nameImage)
+        
+            
     }
     
     func initText() {
         nameOfPoke = UILabel(frame: CGRect(x: 120, y: UIApplication.shared.statusBarFrame.maxY+50, width: view.frame.width-120, height: 40))
         nameOfPoke.text = pokemonProfile.name
         view.addSubview(nameOfPoke)
-
+        
+        attackLabel = UILabel(frame: CGRect(x: 120, y: UIApplication.shared.statusBarFrame.maY + 50, width: view.frame.width - 120, height: 40))
+        attackLabel.text = pokemonProfile.attack
+        view.addSubview(attackLabel)
+        
+        defenseLabel = UILabel(frame: CGRect(x: 120, y: UIApplication.shared.statusBarFrame.maY + 50, width: view.frame.width - 120, height: 40))
+        defenseLabel.text = pokemonProfile.defense
+        view.addSubview(defenseLabel)
+        
+        healthLabel = UILabel(frame: CGRect(x: 120, y: UIApplication.shared.statusBarFrame.maY + 50, width: view.frame.width - 120, height: 40))
+        healthLabel.text = pokemonProfile.health
+        view.addSubview(healthLabel)
+        
+        spALabel = UILabel(frame: CGRect(x: 120, y: UIApplication.shared.statusBarFrame.maY + 50, width: view.frame.width - 120, height: 40))
+        spALabel.text = pokemonProfile.specialAttack
+        view.addSubview(spALabel)
+        
+        spDLabel = UILabel(frame: CGRect(x: 120, y: UIApplication.shared.statusBarFrame.maY + 50, width: view.frame.width - 120, height: 40))
+        spDLabel.text = pokemonProfile.specialDefense
+        view.addSubview(spDLabel)
+        
+        speciesLabel = UILabel(frame: CGRect(x: 120, y: UIApplication.shared.statusBarFrame.maY + 50, width: view.frame.width - 120, height: 40))
+        speciesLabel.text = pokemonProfile.species
+        view.addSubview(speciesLabel)
+        
+        speedLabel = UILabel(frame: CGRect(x: 120, y: UIApplication.shared.statusBarFrame.maY + 50, width: view.frame.width - 120, height: 40))
+        speedLabel.text = pokemonProfile.speed
+        view.addSubview(speedLabel)
+        
+        totalLabel = UILabel(frame: CGRect(x: 120, y: UIApplication.shared.statusBarFrame.maY + 50, width: view.frame.width - 120, height: 40))
+        totalLabel.text = pokemonProfile.total
+        view.addSubview(totalLabel)
+        
+        typesLabel = UILabel(frame: CGRect(x: 120, y: UIApplication.shared.statusBarFrame.maY + 50, width: view.frame.width - 120, height: 40))
+        typesLabel.text = pokemonProfile.types
+        view.addSubview(typesLabel)
     }
     
     func initButton() {
@@ -60,6 +95,8 @@ extension ProfileViewController {
         addToFav.backgroundColor = UIColor.flatBlueDark
         view.addSubview(addToFav)
     }
+    
+    //(name: key, number: number, attack: attack, defense: defense, health: hp, spAttack: spatk, spDef: spdef, species: species, speed: speed, total: total, types: type)
 }
 
 
