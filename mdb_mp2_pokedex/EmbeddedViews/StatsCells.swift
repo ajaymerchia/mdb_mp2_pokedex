@@ -16,10 +16,10 @@ import UIKit
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        stat_logo = UIImageView(frame: CGRect(x: 20, y: 10, width: 30, height: 30))
+        stat_logo = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
         stat_logo.image = #imageLiteral(resourceName: "pokeball")
         
-        stat_label = UILabel(frame: CGRect(x: 35, y: 0, width: 300, height: 50))
+        stat_label = UILabel(frame: CGRect(x: 50, y: 0, width: 300, height: 50))
         stat_label.textColor = .black
         stat_label.text = "some label my dudes"
         

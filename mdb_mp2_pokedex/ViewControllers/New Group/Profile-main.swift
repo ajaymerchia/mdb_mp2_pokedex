@@ -44,7 +44,8 @@ class ProfileViewController: UIViewController {
         statsTable = UITableView(frame: CGRect(x:PADDING, y:UIComponentAbove, width: WORKING_SPACE, height: view.frame.height - UIComponentAbove - PADDING))
         statsTable.register(StatsCells.self, forCellReuseIdentifier: "statsRow")
         statsTable.delegate = self
-        statsTable.rowHeight = 10
+        statsTable.dataSource = self
+        statsTable.rowHeight = 40
         
         view.addSubview(statsTable)
         
