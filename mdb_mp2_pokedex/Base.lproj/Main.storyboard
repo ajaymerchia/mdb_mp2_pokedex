@@ -45,6 +45,21 @@
             </objects>
             <point key="canvasLocation" x="-241" y="-6"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="EPn-Jm-1cg">
+            <objects>
+                <viewController id="GBv-fh-T9Y" customClass="ProfileViewController" customModule="mdb_mp2_pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="41e-FV-a4b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BtL-Ta-Cbz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wsu-5y-lBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1282" y="-6"/>
+        </scene>
         <!--Search View Controller-->
         <scene sceneID="Xnf-Dt-udn">
             <objects>
@@ -55,6 +70,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Htw-T7-ry2"/>
                     </view>
+                    <connections>
+                        <segue destination="GBv-fh-T9Y" kind="show" identifier="showProfileView" id="Fgj-R1-32p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wai-gP-EsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ProfileScreenViewController: UIViewController {
+class ProfileViewController: UIViewController {
     
     //(name: key, number: number, attack: attack, defense: defense, health: hp, spAttack: spatk, spDef: spdef, species: species, speed: speed, total: total, types: type)
     var statsTable: UITableView!
-    var pokemon: Pokemon! = PokemonGenerator.getPokemonArray()
+    var pokemon: [Pokemon] = PokemonGenerator.ALL_POKEMON
+    
     var nameImage: UIImageView!
     //var nameLabel: UILabel!
     //var attackLabel: UILabel! = pokemon[2]
@@ -34,6 +35,19 @@ class ProfileScreenViewController: UIViewController {
         super.viewDidLoad()
         loadStatsTable()
         // Do any additional setup after loading the view.
+    }
+    
+    func loadStatsTable(){
+        let PADDING: CGFloat = 20
+        let WORKING_SPACE = view.frame.width - 2 * PADDING
+        let UIComponentAbove = view.frame.height/2 //webSearchButton.frame.max.Y
+        statsTable = UITableView(frame: CGRect(x:PADDING, y:UIComponentAbove, width: WORKING_SPACE, height: view.frame.height - UIComponentAbove - PADDING))
+        statsTable.register(StatsCells.self, forCellReuseIdentifier: "statsRow")
+        statsTable.delegate = self
+        statsTable.rowHeight = 10
+        
+        view.addSubview(statsTable)
+        
     }
 
     override func didReceiveMemoryWarning() {
