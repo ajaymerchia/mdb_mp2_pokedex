@@ -20,5 +20,5 @@ import UIKit
         
         
     }
-    statsTable = UITableView(frame: CGRect(x:PADDING))
+    statsTable = UITableView(frame: CGRect(x:PADDING, y:UIComponentAbove, width: WORKING_SPACE, height: view.frame.height - UIComponent
  }

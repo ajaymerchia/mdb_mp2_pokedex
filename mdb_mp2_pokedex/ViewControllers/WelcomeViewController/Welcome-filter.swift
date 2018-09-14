@@ -12,14 +12,12 @@ import UIKit
 extension WelcomeViewController {
     @objc func set_filter_button_state(sender: FilterButton) {
         sender.isSelected = !sender.isSelected
-        debugPrint(sender.tag, Pokemon.ALL_POKE_FILTERS[sender.tag])
         
         if sender.isSelected {
             activate_filter(sender)
         } else {
             deactivate_filter(sender)
         }
-        debugPrint(selected_filters)
 
         
     }

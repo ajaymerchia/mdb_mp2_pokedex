@@ -40,17 +40,31 @@ extension WelcomeViewController {
     }
     
     func searchByActiveFilters() -> [Pokemon] {
+        
+        debugPrint("Filtering For...")
+        for filter in selected_filters {
+            debugPrint(filter.generic_repr())
+        }
+        
+        debugPrint("Found Pokemon")
+        
         var qualifiedPokemon:[Pokemon] = []
         for poke in PokemonGenerator.ALL_POKEMON {
-            var satisfies = true
+            var type_satisified = false
+            var attr_violated = false
             for filter in selected_filters {
-                if !filter.pred(x: poke) {
-                    satisfies = false
-                    break
+                if filter.filterType == SearchFilter.FILTER_TYPE.INT_GREATER_THAN && !filter.pred(x: poke) {
+                    attr_violated = true
                 }
+                
+                if filter.filterType == SearchFilter.FILTER_TYPE.TYPE_EQUALS && filter.pred(x: poke) {
+                    type_satisified = true
+                }
+                
             }
-            if satisfies {
+            if type_satisified && !attr_violated {
                 qualifiedPokemon.append(poke)
+                debugPrint(poke.name)
             }
         }
         
