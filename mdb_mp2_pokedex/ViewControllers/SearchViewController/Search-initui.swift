@@ -40,7 +40,12 @@ extension SearchViewController {
     }
     
     func addListView() {
-        
+        listView = UITableView(frame: CGRect(x: PADDING, y: UIApplication.shared.statusBarFrame.maxY, width: WORKING_SPACE, height: view.frame.height-UIApplication.shared.statusBarFrame.maxY-PADDING))
+        listView.register(PokemonRow.self, forCellReuseIdentifier: "pokemonRow")
+        listView.delegate = self
+        listView.dataSource = self
+        listView.rowHeight = 50
+        view.addSubview(listView)
     }
     
     func addGridView() {
