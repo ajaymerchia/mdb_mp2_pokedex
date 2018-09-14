@@ -28,7 +28,7 @@ class FilterCellView: UICollectionViewCell {
         points_selected.textColor = .white
         points_selected.backgroundColor = rgba(0,0,0,0.6)
         points_selected.adjustsFontSizeToFitWidth = true
-        points_selected.font = UIFont(name: "Gentona-Book", size: 12)
+        points_selected.font = UIFont(name: "Gentona", size: 12)
             
         points_selected.text = "0-200"
         filterImageButton = FilterButton(frame: contentView.frame)

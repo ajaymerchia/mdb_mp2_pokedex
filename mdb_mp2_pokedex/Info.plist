@@ -36,9 +36,9 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Gentona Book Bold.otf</string>
-		<string>Gentona Book Italic.otf</string>
-		<string>Gentona Book.otf</string>
+		<string>Gentona-Bold.otf</string>
+		<string>Gentona-Italic.otf</string>
+		<string>Gentona.otf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

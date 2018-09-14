@@ -30,16 +30,18 @@ class WelcomeViewController: UIViewController {
     var selected_filters: [SearchFilter] = []
     var qualifiedPokemon: [Pokemon] = []
     
+    var countDown: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         WORKING_SPACE = view.frame.width - 2 * PADDING
-        
         //Initialize UI Components
         init_img()
         init_grid()
         init_buttons()
+        init_nav()
         
         
     }

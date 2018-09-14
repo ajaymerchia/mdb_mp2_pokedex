@@ -8,8 +8,15 @@
 
 import Foundation
 import UIKit
+import ChameleonFramework
 
 extension WelcomeViewController {
+    
+    func init_nav() {
+        navigationController?.navigationBar.barTintColor = UIColor.flatBlue
+        navigationController?.navigationBar.tintColor = .white
+    }
+    
     func init_img() {
         header_img = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width - 2*PADDING, height: 100))
         header_img.center = CGPoint(x: view.frame.width/2, y: view.frame.height/6)
@@ -22,17 +29,22 @@ extension WelcomeViewController {
     func init_buttons() {
         filteredSearch = UIButton(frame: CGRect(x: PADDING, y: filterCollectionView.frame.maxY + 30, width: (view.frame.width-2*PADDING)/2, height: 40))
         filteredSearch.setTitle("Search", for: .normal)
-        filteredSearch.titleLabel?.font = UIFont(name: "Gentona-Book-Bold", size: 24)
-        filteredSearch.backgroundColor = .blue
+//        filteredSearch.titleLabel!.font = UIFont(name: "Courier-BoldOblique", size: 24)
+        
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
+        filteredSearch.backgroundColor = UIColor.flatBlue
         filteredSearch.addTarget(self, action: #selector(filterSearch), for: .touchUpInside)
         view.addSubview(filteredSearch)
         
         
         randomizedSearch = UIButton(frame: CGRect(x: filteredSearch.frame.maxX, y: filterCollectionView.frame.maxY + 30, width: (view.frame.width-2*PADDING)/2, height: 40))
         randomizedSearch.setTitle("Randomize", for: .normal)
-        filteredSearch.titleLabel?.font = UIFont(name: "Gentona-Book-Bold", size: 24)
+        randomizedSearch.titleLabel!.font = UIFont(name: "Gentona-Bold", size: 24)
         randomizedSearch.addTarget(self, action: #selector(randomSearch), for: .touchUpInside)
-        randomizedSearch.backgroundColor = .green
+        randomizedSearch.backgroundColor = UIColor.flatBlueDark
         
         view.addSubview(randomizedSearch)
     }

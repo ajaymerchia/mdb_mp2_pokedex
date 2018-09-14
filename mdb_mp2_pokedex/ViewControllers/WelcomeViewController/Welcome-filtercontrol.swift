@@ -22,10 +22,6 @@ extension WelcomeViewController {
         debugPrint(selected_filters)
 
         
-        if sender.isValueFilter {
-            debugPrint("this is a value button")
-        }
-        
     }
     
     func activate_filter(_ sender: FilterButton) {

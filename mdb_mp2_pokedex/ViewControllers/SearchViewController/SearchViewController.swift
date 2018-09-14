@@ -9,12 +9,17 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    // DATA
     var pokemonResults:[Pokemon]!
+    
+    // Layout Structures
+    var segmentedControl:UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        initLayouts()
     }
     
 
