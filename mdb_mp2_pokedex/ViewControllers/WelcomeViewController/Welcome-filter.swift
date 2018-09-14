@@ -37,7 +37,7 @@ extension WelcomeViewController {
         
         var remove_me:Int?
         for i in 0..<selected_filters.count {
-            if selected_filters[i] == Pokemon.ALL_POKE_FILTERS[sender.tag] {
+            if selected_filters[i].generic_repr() == Pokemon.ALL_POKE_FILTERS[sender.tag] {
                 remove_me = i
             }
         }

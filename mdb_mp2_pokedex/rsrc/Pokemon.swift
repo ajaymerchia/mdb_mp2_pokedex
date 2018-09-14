@@ -43,8 +43,9 @@ class Pokemon {
     let imageUrl: String!
     let stats: [Int]!
     let statNames = ["Attack", "Defense", "Health", "Special Attack", "Special Defense", "Total"]
+    let uid: Int!
     
-    init(name: String, number: Int, attack: Int, defense: Int, health: Int, spAttack: Int, spDef: Int, species: String, speed: Int, total: Int, types: [String]) {
+    init(name: String, number: Int, attack: Int, defense: Int, health: Int, spAttack: Int, spDef: Int, species: String, speed: Int, total: Int, types: [String], uid: Int) {
         self.name = name
         self.number = number
         self.attack = attack
@@ -58,6 +59,7 @@ class Pokemon {
         self.types = types
         self.imageUrl = "http://img.pokemondb.net/artwork/\(name.components(separatedBy: " ")[0].lowercased()).jpg"
         self.stats = [self.attack, self.defense, self.health, self.specialAttack, self.specialDefense, self.total]
+        self.uid = uid
     }
     
 }

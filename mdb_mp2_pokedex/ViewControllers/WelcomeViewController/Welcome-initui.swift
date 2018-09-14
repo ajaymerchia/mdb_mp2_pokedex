@@ -30,11 +30,11 @@ extension WelcomeViewController {
         filteredSearch = UIButton(frame: CGRect(x: PADDING, y: filterCollectionView.frame.maxY + 30, width: (view.frame.width-2*PADDING)/2, height: 40))
         filteredSearch.setTitle("Search", for: .normal)
 //        filteredSearch.titleLabel!.font = UIFont(name: "Courier-BoldOblique", size: 24)
-        
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font names: \(names)")
-        }
+//        
+//        for family in UIFont.familyNames.sorted() {
+//            let names = UIFont.fontNames(forFamilyName: family)
+//            print("Family: \(family) Font names: \(names)")
+//        }
         filteredSearch.backgroundColor = UIColor.flatBlue
         filteredSearch.addTarget(self, action: #selector(filterSearch), for: .touchUpInside)
         view.addSubview(filteredSearch)

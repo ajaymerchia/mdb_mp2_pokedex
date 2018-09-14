@@ -1,9 +1,8 @@
 //
-//  TableViewWork.swift
-//  mdb_mp2_pokedex
+//  Profile-stats.swift
 //
-//  Created by Kayli  Jiang on 9/14/18.
-//  Copyright © 2018 Ajay Raj Merchia. All rights reserved.
+//
+//  Created by Ajay Raj Merchia on 9/14/18.
 //
 
 import Foundation
@@ -21,7 +20,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             subview.removeFromSuperview()
         }
         cell.awakeFromNib()
-        cell.stat_label.text = "hello, \(pokemonProfile.name)\(indexPath.row)" 
+        cell.stat_label.text = "hello, \(pokemonProfile.name)\(indexPath.row)"
         cell.stat_logo.image = #imageLiteral(resourceName: "pokeball")
         
         return cell

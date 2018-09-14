@@ -15,6 +15,7 @@ class PokemonGenerator {
         if let path = Bundle.main.path(forResource: "pokeData", ofType: "json")
         {
             if let jsonData = NSData(contentsOfFile: path) {
+                var count = 0
                 do {
                     let json = try JSONSerialization.jsonObject(with: jsonData as Data, options: .mutableContainers) as! [String:AnyObject]
                     
@@ -30,7 +31,8 @@ class PokemonGenerator {
                         let speed = Int(pokemonData["Speed"] as! String)!
                         let total = Int(pokemonData["Total"] as! String)!
                         let type = pokemonData["Type"] as! [String]
-                        pokemonArray.append(Pokemon(name: key, number: number, attack: attack, defense: defense, health: hp, spAttack: spatk, spDef: spdef, species: species, speed: speed, total: total, types: type))
+                        pokemonArray.append(Pokemon(name: key, number: number, attack: attack, defense: defense, health: hp, spAttack: spatk, spDef: spdef, species: species, speed: speed, total: total, types: type, uid: count))
+                        count += 1
                     }
                 } catch {
                     NSLog("Could not load Pokemon array")
