@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
     
     //(name: key, number: number, attack: attack, defense: defense, health: hp, spAttack: spatk, spDef: spdef, species: species, speed: speed, total: total, types: type)
     var statsTable: UITableView!
-    var pokemon: [Pokemon] = PokemonGenerator.ALL_POKEMON
+    var pokemonProfile: Pokemon!
     
     var nameImage: UIImageView!
     //var nameLabel: UILabel!

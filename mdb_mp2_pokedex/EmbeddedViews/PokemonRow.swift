@@ -21,7 +21,6 @@ class PokemonRow: UITableViewCell {
         pokemon_name = UILabel(frame: CGRect(x: 35, y: 0, width: 300, height: 50))
         pokemon_name.textColor = .black
 
-
         contentView.addSubview(pokemon_image)
         contentView.addSubview(pokemon_name)
     }

@@ -21,7 +21,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             subview.removeFromSuperview()
         }
         cell.awakeFromNib()
-        cell.stat_label.text = "hello"
+        cell.stat_label.text = "hello, \(pokemonProfile.name)\(indexPath.row)" 
         cell.stat_logo.image = #imageLiteral(resourceName: "pokeball")
         
         return cell

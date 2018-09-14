@@ -8,10 +8,17 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, UISearchBarDelegate {
+    
+    // Components and Logic for Search
+    var searchBar: UISearchBar!
+    var searchText: String!
+    
+    
     
     // UIComponents for Header
     var header_img: UIImageView!
+    
     
     // UIComponents for SelectingFilters
     var filter_buttons: [FilterButton] = []
