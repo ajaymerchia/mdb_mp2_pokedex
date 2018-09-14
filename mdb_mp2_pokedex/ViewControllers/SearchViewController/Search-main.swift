@@ -11,6 +11,12 @@ import UIKit
 class SearchViewController: UIViewController {
     // DATA
     var pokemonResults:[Pokemon]!
+    var gridView: UICollectionView!
+    var listView: UITableView!
+
+    // UISpacing Components
+    let PADDING:CGFloat = 20
+    var WORKING_SPACE:CGFloat!
     
     // Layout Structures
     var segmentedControl:UISegmentedControl!
@@ -19,6 +25,8 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        WORKING_SPACE = view.frame.width - 2 * PADDING
+
         initLayouts()
     }
     
