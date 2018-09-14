@@ -57,14 +57,4 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         listView.rowHeight = 50
         view.addSubview(listView)
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        targetPokemon = PokemonGenerator.ALL_POKEMON[favorites_from_storage[indexPath.row]]
-        performSegue(withIdentifier: "Fav2Profile", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let profileVC = segue.destination as! ProfileViewController
-        profileVC.pokemonProfile = targetPokemon
-    }
 }

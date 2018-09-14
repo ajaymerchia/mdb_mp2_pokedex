@@ -49,7 +49,7 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
         init_buttons()
         init_nav()
         initializeSearch()
-    
+        
         
     }
     

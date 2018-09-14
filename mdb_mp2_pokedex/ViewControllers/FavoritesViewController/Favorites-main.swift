@@ -14,10 +14,8 @@ class FavoritesViewController: UIViewController {
     var WORKING_SPACE:CGFloat!
     var listView: UITableView!
     
-    var targetPokemon:Pokemon!
-    
     var favorites_from_storage:[Int] = []
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

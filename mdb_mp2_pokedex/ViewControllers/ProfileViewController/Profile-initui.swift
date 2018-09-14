@@ -10,7 +10,14 @@ import Foundation
 import UIKit
 extension ProfileViewController {
     
+    func initNav() {
+        let access_favorites = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.organize, target: self, action: #selector(go_to_fav))
+        navigationItem.rightBarButtonItem = access_favorites
+    }
     
+    @objc func go_to_fav() {
+        debugPrint("hello2")
+    }
     
     func initStats(){
         let PADDING: CGFloat = 20
