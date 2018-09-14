@@ -89,7 +89,7 @@ class SearchFilter: Equatable {
 
         switch filterType! {
         case .NAME_EQUALS:
-            return x.name == str_comparee!
+            return x.name.contains(str_comparee!)
         case .NUM_EQUALS:
             return x.number == int_comparee!
         case .TYPE_EQUALS:

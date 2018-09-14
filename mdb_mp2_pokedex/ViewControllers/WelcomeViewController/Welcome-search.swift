@@ -14,6 +14,11 @@ extension WelcomeViewController {
         performSegue(withIdentifier: "toSearchResults", sender: self)
     }
     
+    func searchBarSearch() {
+        qualifiedPokemon = searchByUISearchBar()
+        performSegue(withIdentifier: "toSearchResults", sender: self)
+    }
+    
     @objc func randomSearch() {
         var random_options_selected = Set<Int>()
         
@@ -65,6 +70,36 @@ extension WelcomeViewController {
             if type_satisified && !attr_violated {
                 qualifiedPokemon.append(poke)
                 debugPrint(poke.name)
+            }
+        }
+        
+        return qualifiedPokemon
+    }
+    
+    func searchByUISearchBar() -> [Pokemon] {
+        
+        debugPrint("Filtering For...")
+        for filter in selected_filters {
+            debugPrint(filter.generic_repr())
+        }
+        
+        debugPrint("Found Pokemon")
+        
+        var qualifiedPokemon:[Pokemon] = []
+        for poke in PokemonGenerator.ALL_POKEMON {
+            var satisfied = false
+            for filter in selected_filters {
+                if filter.filterType == SearchFilter.FILTER_TYPE.NAME_EQUALS && filter.pred(x: poke) {
+                    satisfied = true
+                    break
+                } else if filter.filterType == SearchFilter.FILTER_TYPE.NUM_EQUALS && filter.pred(x: poke) {
+                    satisfied = true
+                    break
+                }
+                
+            }
+            if satisfied {
+                qualifiedPokemon.append(poke)
             }
         }
         
