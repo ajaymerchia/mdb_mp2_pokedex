@@ -14,6 +14,7 @@ extension WelcomeViewController {
         searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.sizeToFit()
+        searchBar.placeholder = "Search by name or number!"
         
         let searchBarTextField = searchBar.value(forKey: "searchField") as! UITextField
         searchBarTextField.tintColor = UIColor.flatBlueDark
@@ -59,6 +60,7 @@ extension WelcomeViewController {
         }
         
         searchBarSearch()
+        searchBar.text = ""
     }
     
     
