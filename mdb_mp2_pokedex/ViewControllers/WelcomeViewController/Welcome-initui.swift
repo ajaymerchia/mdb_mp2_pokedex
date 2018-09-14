@@ -22,6 +22,7 @@ extension WelcomeViewController {
     func init_buttons() {
         filteredSearch = UIButton(frame: CGRect(x: PADDING, y: filterCollectionView.frame.maxY + 30, width: (view.frame.width-2*PADDING)/2, height: 40))
         filteredSearch.setTitle("Search", for: .normal)
+        filteredSearch.titleLabel?.font = UIFont(name: "Gentona-Book-Bold", size: 24)
         filteredSearch.backgroundColor = .blue
         filteredSearch.addTarget(self, action: #selector(filterSearch), for: .touchUpInside)
         view.addSubview(filteredSearch)
@@ -29,6 +30,7 @@ extension WelcomeViewController {
         
         randomizedSearch = UIButton(frame: CGRect(x: filteredSearch.frame.maxX, y: filterCollectionView.frame.maxY + 30, width: (view.frame.width-2*PADDING)/2, height: 40))
         randomizedSearch.setTitle("Randomize", for: .normal)
+        filteredSearch.titleLabel?.font = UIFont(name: "Gentona-Book-Bold", size: 24)
         randomizedSearch.addTarget(self, action: #selector(randomSearch), for: .touchUpInside)
         randomizedSearch.backgroundColor = .green
         
