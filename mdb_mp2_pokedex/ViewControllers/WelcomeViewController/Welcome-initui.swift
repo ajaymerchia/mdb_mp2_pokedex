@@ -15,6 +15,14 @@ extension WelcomeViewController {
     func init_nav() {
         navigationController?.navigationBar.barTintColor = UIColor.flatBlue
         navigationController?.navigationBar.tintColor = .white
+        
+        let access_favorites = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.organize, target: self, action: #selector(go_to_fav))
+        navigationItem.rightBarButtonItem = access_favorites
+        
+    }
+    
+    @objc func go_to_fav() {
+        performSegue(withIdentifier: "Welcome2Fav", sender: self)
     }
     
     func init_img() {

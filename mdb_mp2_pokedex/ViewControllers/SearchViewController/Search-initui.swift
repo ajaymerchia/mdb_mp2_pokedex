@@ -10,6 +10,14 @@ import Foundation
 import UIKit
 
 extension SearchViewController {
+    func initNav() {
+        let access_favorites = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.organize, target: self, action: #selector(go_to_fav))
+        navigationItem.rightBarButtonItem = access_favorites
+    }
+    
+    @objc func go_to_fav() {
+        debugPrint("hello1")
+    }
     func initLayouts () {
         // Segmented Control Switches
         segmentedControl = UISegmentedControl(items: ["List", "Grid"])

@@ -39,6 +39,7 @@
                     <navigationItem key="navigationItem" id="CsP-AW-Ndi"/>
                     <connections>
                         <segue destination="Qb2-q9-cuO" kind="show" identifier="toSearchResults" id="Crv-BL-g0I"/>
+                        <segue destination="p7i-jD-bDr" kind="presentation" identifier="Welcome2Fav" id="VJU-O7-gSe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,11 +73,47 @@
                     </view>
                     <connections>
                         <segue destination="GBv-fh-T9Y" kind="show" identifier="showProfileView" id="Fgj-R1-32p"/>
+                        <segue destination="p7i-jD-bDr" kind="presentation" identifier="Search2Fav" id="kwq-xi-FVD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wai-gP-EsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="479" y="-6"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="03a-uv-S3h">
+            <objects>
+                <navigationController id="p7i-jD-bDr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cbH-Cz-c7p">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SxY-jn-Zai" kind="relationship" relationship="rootViewController" id="ziC-A0-CVf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TIX-az-m81" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-574" y="868"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="dpT-n1-Jpf">
+            <objects>
+                <viewController id="SxY-jn-Zai" customClass="FavoritesViewController" customModule="mdb_mp2_pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QJe-48-BRF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vRJ-OJ-yjF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="58c-iY-EeP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E0O-cM-p6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228" y="834"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kwq-xi-FVD"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -38,10 +38,11 @@ extension WelcomeViewController {
     }
     
     
-    // Informs the new GameScreenController of a stats score to preload.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let searchVC = segue.destination as! SearchViewController
-        searchVC.pokemonResults = qualifiedPokemon
+        if let searchVC = segue.destination as?  SearchViewController {
+            searchVC.pokemonResults = qualifiedPokemon
+        }
+        
     }
     
     func searchByActiveFilters() -> [Pokemon] {

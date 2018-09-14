@@ -9,6 +9,16 @@
 import Foundation
 import UIKit
 extension ProfileViewController {
+    
+    func initNav() {
+        let access_favorites = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.organize, target: self, action: #selector(go_to_fav))
+        navigationItem.rightBarButtonItem = access_favorites
+    }
+    
+    @objc func go_to_fav() {
+        debugPrint("hello2")
+    }
+    
     func initStats(){
         let PADDING: CGFloat = 20
         let WORKING_SPACE = view.frame.width - 2 * PADDING
@@ -57,8 +67,30 @@ extension ProfileViewController {
     func initButton() {
         addToFav = UIButton(frame: CGRect(x: 20, y: 250, width: (view.frame.width - 40)/2, height: 50))
         addToFav.setTitle("Add to Favorites", for: .normal)
+        addToFav.addTarget(self, action: #selector(addPokemonToFavorites), for: .touchUpInside)
         addToFav.backgroundColor = UIColor.flatBlueDark
         view.addSubview(addToFav)
+    }
+    
+    @objc func addPokemonToFavorites() {
+        let defaults = UserDefaults.standard
+        
+        var _target:[Int] = [pokemonProfile.uid]
+        guard let arr = defaults.array(forKey: "favorites") else {
+            defaults.set(_target, forKey: "favorites")
+            return
+        }
+        
+        
+        let arr_casted = arr as! [Int]
+        
+        if !arr_casted.contains(pokemonProfile.uid) {
+            _target = _target + arr_casted
+            defaults.set(_target, forKey: "favorites")
+        }
+        
+        debugPrint(defaults)
+        
     }
 }
 
