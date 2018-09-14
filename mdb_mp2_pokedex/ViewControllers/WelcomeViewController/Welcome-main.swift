@@ -19,7 +19,6 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
     // UIComponents for Header
     var header_img: UIImageView!
     
-    
     // UIComponents for SelectingFilters
     var filter_buttons: [FilterButton] = []
     var filter_collection: [FilterCellView] = []
@@ -50,7 +49,7 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
         init_buttons()
         init_nav()
         initializeSearch()
-        
+    
         
     }
     

@@ -28,7 +28,7 @@ class SearchViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         WORKING_SPACE = view.frame.width - 2 * PADDING
-
+        initNav()
         initLayouts()
     }
     

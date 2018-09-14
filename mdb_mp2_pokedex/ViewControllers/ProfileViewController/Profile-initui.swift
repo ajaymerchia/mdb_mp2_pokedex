@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 extension ProfileViewController {
+    
+    
+    
     func initStats(){
         let PADDING: CGFloat = 20
         let WORKING_SPACE = view.frame.width - 2 * PADDING
@@ -92,6 +95,7 @@ extension ProfileViewController {
     func initButton() {
         addToFav = UIButton(frame: CGRect(x: 20, y: 250, width: (view.frame.width - 40)/2, height: 50))
         addToFav.setTitle("Add to Favorites", for: .normal)
+        addToFav.addTarget(self, action: #selector(addPokemonToFavorites), for: .touchUpInside)
         addToFav.backgroundColor = UIColor.flatBlueDark
         view.addSubview(addToFav)
     }
