@@ -72,6 +72,11 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        targetPokemon = pokemonResults[indexPath.row]
+        performSegue(withIdentifier: "showProfileView", sender: self)
+    }
+    
     
     
     

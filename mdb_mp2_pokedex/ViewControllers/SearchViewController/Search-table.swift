@@ -28,7 +28,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate{
         
         cell.pokemon_name.text = curr_pokemon.name
         
-        cell.pokemon_name.text = "#\(curr_pokemon.number!)" + " " + cell.pokemon_name.text!
+        cell.pokemon_name.text = "#\(curr_pokemon.number!) " + cell.pokemon_name.text!
         
         if let imageUrl:URL = URL(string: curr_pokemon.imageUrl) {
             DispatchQueue.global().async {
@@ -53,9 +53,9 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        pokemonSelected = pokemon[indexPath.row]
-//        performSegue(withIdentifier: "showProfileView", sender: nil)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        targetPokemon = pokemonResults[indexPath.row]
+        performSegue(withIdentifier: "showProfileView", sender: self)
+    }
     
 }

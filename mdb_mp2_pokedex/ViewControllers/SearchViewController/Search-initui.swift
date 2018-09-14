@@ -19,6 +19,9 @@ extension SearchViewController {
         segmentedControl.setWidth(80, forSegmentAt: 0)
         segmentedControl.setWidth(80, forSegmentAt: 1)
         navigationItem.titleView = segmentedControl
+        addListView()
+        addGridView()
+        switchLayout()
     }
     
     @objc func switchLayout() {

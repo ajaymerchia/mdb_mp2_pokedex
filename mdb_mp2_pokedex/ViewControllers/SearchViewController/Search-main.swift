@@ -13,6 +13,8 @@ class SearchViewController: UIViewController {
     var pokemonResults:[Pokemon]!
     var gridView: UICollectionView!
     var listView: UITableView!
+    
+    var targetPokemon: Pokemon!
 
     // UISpacing Components
     let PADDING:CGFloat = 20
