@@ -16,8 +16,10 @@ extension WelcomeViewController {
         navigationController?.navigationBar.barTintColor = UIColor.flatBlue
         navigationController?.navigationBar.tintColor = .white
         
-        let access_favorites = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.organize, target: self, action: #selector(go_to_fav))
-        navigationItem.rightBarButtonItem = access_favorites
+        let access_favorites = UIBarButtonItem(title: "favorites", style: UIBarButtonItemStyle.done, target: self, action: #selector(go_to_fav))
+        
+        access_favorites.image = favoritesIcon
+        self.navigationItem.rightBarButtonItem = access_favorites
         
     }
     

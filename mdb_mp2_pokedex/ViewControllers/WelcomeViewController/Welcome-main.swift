@@ -14,7 +14,8 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
     var searchBar: UISearchBar!
     var searchText: String!
     
-    
+    //Favorites icon
+    let favoritesIcon = UIImage(named: "favorites")
     
     // UIComponents for Header
     var header_img: UIImageView!
