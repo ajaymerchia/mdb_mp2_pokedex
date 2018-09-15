@@ -35,6 +35,8 @@ extension WelcomeViewController {
         // nuke existing filters
         selected_filters = []
         
+        searchBar.resignFirstResponder()
+        
         if searchBar.text == "" {
             dismissKeyboard()
             return

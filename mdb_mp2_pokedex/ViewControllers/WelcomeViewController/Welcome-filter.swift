@@ -11,9 +11,15 @@ import UIKit
 
 extension WelcomeViewController {
     @objc func set_filter_button_state(sender: FilterButton) {
-        sender.isSelected = !sender.isSelected
+        if let ind = index_of_selected_filters.index(of: sender.tag) {
+            index_of_selected_filters.remove(at: ind)
+            sender.isSelected = false
+        } else {
+            index_of_selected_filters.append(sender.tag)
+            sender.isSelected = true
+        }
         
-        if sender.isSelected {
+        if index_of_selected_filters.contains(sender.tag) {
             activate_filter(sender)
         } else {
             deactivate_filter(sender)
@@ -27,7 +33,6 @@ extension WelcomeViewController {
 
         if sender.isValueFilter {
             getMinimumValue(sender_label)
-            
         } else {
             selected_filters.append(SearchFilter.create_type_filter(type: sender_label))
         }
@@ -37,12 +42,15 @@ extension WelcomeViewController {
         
         var remove_me:Int?
         for i in 0..<selected_filters.count {
-            if selected_filters[i].generic_repr() == Pokemon.ALL_POKE_FILTERS[sender.tag] {
+            if selected_filters[i].generic_repr() == Pokemon.ALL_POKE_FILTERS[sender.tag].lowercased() {
                 remove_me = i
             }
         }
         guard let remove = remove_me else {
             return
+        }
+        if sender.isValueFilter {
+            filter_collection[sender.tag].points_selected.text = "0-200"
         }
         selected_filters.remove(at: remove)
     }
@@ -68,7 +76,8 @@ extension WelcomeViewController {
                 return
             }
             
-            self.getCellWith(type: attribute)?.points_selected.text = "\(response) - 200"
+            self.updateTextOfCellWith(attribute: attribute, to: response)
+//            self.getCellWith(type: attribute)?.points_selected.text = "\(response) - 200"
             self.addValueFilter(sender_label: attribute.lowercased(), minVal: response)
         }))
         
@@ -101,7 +110,12 @@ extension WelcomeViewController {
     }
     
     func deselect(_ _attribute: String) {
-        getButtonWith(type: _attribute)?.isSelected = false
+        if let button = getButtonWith(type: _attribute) {
+            button.isSelected = false
+            if let ind = index_of_selected_filters.index(of: button.tag) {
+                index_of_selected_filters.remove(at: ind)
+            }
+        }
     }
     
     func getButtonWith(type: String) -> FilterButton? {
@@ -113,6 +127,14 @@ extension WelcomeViewController {
             return nil
         }
         return filter_collection[cellIndex]
+    }
+    
+    func updateTextOfCellWith(attribute: String, to: Int) {
+        for cell in filter_collection {
+            if cell.name_of_filter == attribute.lowercased() {
+                cell.points_selected.text = "\(to) - 200"
+            }
+        }
     }
     
     

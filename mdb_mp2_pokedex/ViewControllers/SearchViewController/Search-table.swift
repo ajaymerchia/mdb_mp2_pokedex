@@ -59,8 +59,10 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let profileVC = segue.destination as! ProfileViewController
-        profileVC.pokemonProfile = targetPokemon
+        if let profileVC = segue.destination as? ProfileViewController {
+            profileVC.pokemonProfile = targetPokemon
+        }
+        
     }
     
 }

@@ -16,8 +16,9 @@ extension SearchViewController {
     }
     
     @objc func go_to_fav() {
-        debugPrint("hello1")
+        performSegue(withIdentifier: "Search2Fav", sender: self)
     }
+    
     func initLayouts () {
         // Segmented Control Switches
         segmentedControl = UISegmentedControl(items: ["List", "Grid"])

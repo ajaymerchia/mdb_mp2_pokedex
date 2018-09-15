@@ -19,9 +19,9 @@ import UIKit
         stat_logo = UIImageView(frame: CGRect(x: 10, y: 10, width: 60, height: 60))
         stat_logo.image = #imageLiteral(resourceName: "pokeball")
         
-        stat_label = UILabel(frame: CGRect(x: 50, y: 0, width: 300, height: 50))
+        stat_label = UILabel(frame: CGRect(x: 90, y: contentView.frame.midY-20, width: 300, height: 40))
+        stat_label.font = UIFont(name: "Gentona-Bold", size: 30)
         stat_label.textColor = .black
-        stat_label.text = "some label my dudes"
         
         contentView.addSubview(stat_logo)
         contentView.addSubview(stat_label)

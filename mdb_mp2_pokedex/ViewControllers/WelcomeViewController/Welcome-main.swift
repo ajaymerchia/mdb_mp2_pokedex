@@ -34,6 +34,7 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
     
     // Search Logic Components
     var selected_filters: [SearchFilter] = []
+    var index_of_selected_filters: [Int] = []
     var qualifiedPokemon: [Pokemon] = []
     
     var countDown: UILabel!

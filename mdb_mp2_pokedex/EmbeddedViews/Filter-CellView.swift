@@ -16,6 +16,7 @@ class FilterButton: UIButton {
 class FilterCellView: UICollectionViewCell {
     var filterImageButton: FilterButton!
     var points_selected: UILabel!
+    var name_of_filter: String!
     
     override func awakeFromNib() {
         super.awakeFromNib()

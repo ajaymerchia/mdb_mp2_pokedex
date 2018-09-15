@@ -16,16 +16,22 @@ class ProfileViewController: UIViewController {
     
     var nameImage: UIImageView!
     var nameOfPoke: UILabel!
+    var species_and_type: UILabel!
     var addToFav: UIButton!
+    
+    let PADDING:CGFloat = 20
+    var WORKING_SPACE:CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        WORKING_SPACE = view.frame.width - 2 * PADDING
+
         // Do any additional setup after loading the view.
-        initStats()
-        initText()
         initImg()
+        initText()
         initButton()
+        initStats()
     }
     
     
