@@ -26,6 +26,12 @@ extension FavoritesViewController {
         favorites_from_storage = arr as! [Int]
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        buildFavorites()
+        listView.removeFromSuperview()
+        addListView()
+    }
+    
    
     
     @objc func go_back() {
