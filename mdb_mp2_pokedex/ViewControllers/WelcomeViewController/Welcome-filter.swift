@@ -68,7 +68,12 @@ extension WelcomeViewController {
         }))
         minimum_prompter.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { action in
             
-            let response = Int((minimum_prompter.textFields?.first?.text)!)!
+            guard let response = Int((minimum_prompter.textFields?.first?.text)!) else {
+                self.deselect(attribute)
+                self.deselectCellWith(attribute: attribute)
+                self.badPokemonAttrRange()
+                return
+            }
         
             if response < 0 || response > 200 {
                 self.deselect(attribute)
