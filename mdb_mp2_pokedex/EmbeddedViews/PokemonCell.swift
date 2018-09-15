@@ -16,8 +16,10 @@ class PokemonCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
-        pokemon_image = UIImageView(frame: contentView.frame)
+       
+        pokemon_image = UIImageView(frame:  CGRect(x: contentView.frame.minX, y: contentView.frame.minY, width: contentView.frame.width, height: contentView.frame.height-20))
+
+//        pokemon_image = UIImageView(frame: contentView.frame)
         pokemon_image.image = UIImage(named: "pokeball")
         pokemon_image.contentMode = .scaleAspectFit
         
@@ -25,11 +27,10 @@ class PokemonCell: UICollectionViewCell {
         
         let paddingX:CGFloat = 20
         
-        pokemon_name = UILabel(frame: CGRect(origin: CGPoint(x: contentView.frame.minX+paddingX, y: ( contentView.frame.midY)), size: CGSize(width: contentView.frame.width - 2 * paddingX, height: 20)))
+        pokemon_name = UILabel(frame: CGRect(origin: CGPoint(x: contentView.frame.minX+paddingX, y: pokemon_image.frame.maxY), size: CGSize(width: contentView.frame.width - 2 * paddingX, height: 20)))
         
         pokemon_name.textAlignment = .center
-        pokemon_name.textColor = .white
-        pokemon_name.backgroundColor = rgba(0,0,0,0.6)
+        pokemon_name.textColor = .black
         pokemon_name.adjustsFontSizeToFitWidth = true
         pokemon_name.font = UIFont(name: "Gentona", size: 12)
         

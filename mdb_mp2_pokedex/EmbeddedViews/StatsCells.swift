@@ -24,6 +24,8 @@ import UIKit
         stat_label.font = UIFont(name: "Gentona-Bold", size: 30)
         stat_label.textColor = .black
         
+        self.backgroundColor = rgba(255,255,255,0)
+        
         contentView.addSubview(stat_logo)
         contentView.addSubview(stat_label)
     }

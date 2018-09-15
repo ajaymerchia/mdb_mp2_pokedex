@@ -104,6 +104,14 @@ extension WelcomeViewController {
         filterCollectionView.backgroundColor = .white
         filterCollectionView.dataSource = self
         filterCollectionView.delegate = self
+        filterCollectionView.layer.cornerRadius = 10
+        
+        filterCollectionView.layer.borderWidth = 1
+        filterCollectionView.layer.borderColor = UIColor.flatGray.cgColor
+        
+        let gray:CGFloat = 242
+        view.backgroundColor = rgba(gray,gray,gray,1)
+        
         view.addSubview(filterCollectionView)
     }
     
