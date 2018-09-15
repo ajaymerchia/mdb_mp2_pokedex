@@ -10,16 +10,20 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     
+    // UI Layout Variables
     let PADDING:CGFloat = 20
     var WORKING_SPACE:CGFloat!
+    
+    // Components
     var listView: UITableView!
+    
+    // Data
     var targetPokemon:Pokemon!
     var favorites_from_storage:[Int] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         WORKING_SPACE = view.frame.width - 2 * PADDING
         init_nav()
         buildFavorites()

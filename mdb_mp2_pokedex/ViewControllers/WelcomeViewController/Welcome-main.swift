@@ -52,10 +52,7 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
         init_search()
 
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
-    }
+
     
     
 

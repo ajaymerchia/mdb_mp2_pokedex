@@ -10,24 +10,39 @@ import Foundation
 import UIKit
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     
+    
+    /// How many Tables Cells to create
+    ///
+    /// - Parameters:
+    ///   - tableView: internal behavior
+    ///   - section: internal behavior
+    /// - Returns: how many tables cells to create
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favorites_from_storage.count
     }
     
+    
+    /// Pattern for creating table cells
+    ///
+    /// - Parameters:
+    ///   - tableView: TableView to which to add the cell
+    ///   - indexPath: index of the Cell
+    /// - Returns: Table Cell for the indexed Pokemon
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Clean up cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "pokemonRow") as! PokemonRow
         for subview in cell.contentView.subviews {
             subview.removeFromSuperview()
         }
         
+        // Initialize Cell and Data
         cell.awakeFromNib()
-        
         let curr_pokemon = PokemonGenerator.ALL_POKEMON[favorites_from_storage[indexPath.row]]
         
-        cell.pokemon_name.text = curr_pokemon.name
+        // Append cleaned version of name to the pokemon's number
+        cell.pokemon_name.text = "#\(curr_pokemon.number!) " + (cell.pokemon_name.text?.replacingOccurrences(of: "( ", with: "(").replacingOccurrences(of: " )", with: ")".replacingOccurrences(of: "  ", with: " ")))!
         
-        cell.pokemon_name.text = "#\(curr_pokemon.number!) " + cell.pokemon_name.text!
-        
+        // Get ImageURL and assign to cell
         if let imageUrl:URL = URL(string: curr_pokemon.imageUrl) {
             DispatchQueue.global().async {
                 
@@ -50,15 +65,14 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func addListView() {
-        listView = UITableView(frame: CGRect(x: PADDING, y: UIApplication.shared.statusBarFrame.maxY, width: WORKING_SPACE, height: view.frame.height-UIApplication.shared.statusBarFrame.maxY-PADDING))
-        listView.register(PokemonRow.self, forCellReuseIdentifier: "pokemonRow")
-        listView.delegate = self
-        listView.dataSource = self
-        listView.rowHeight = 75
-        view.addSubview(listView)
-    }
     
+    
+    
+    ///  If a pokemon is tapped, prepare for the Segue
+    ///
+    /// - Parameters:
+    ///   - tableView: tableView on which one was tapped
+    ///   - indexPath: index of the tapped pokemon
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         targetPokemon = PokemonGenerator.ALL_POKEMON[favorites_from_storage[indexPath.row]]
         performSegue(withIdentifier: "Fav2Profile", sender: self)
@@ -66,6 +80,12 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
 
     }
     
+    
+    /// If a pokemon is selected, initialize the profile view with this Pokemon
+    ///
+    /// - Parameters:
+    ///   - segue: segue to the profile view
+    ///   - sender: src of tap
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let profileVC = segue.destination as! ProfileViewController
         profileVC.pokemonProfile = targetPokemon

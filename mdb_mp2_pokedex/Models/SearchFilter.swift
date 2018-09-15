@@ -24,37 +24,59 @@ class SearchFilter: Equatable {
         case INT_GREATER_THAN
     }
     
+    
+    /// Numberically adjustable Stats
     enum STATS {
         case ATTACK
         case DEFENSE
         case HP
     }
     
+    
+    /// Filtering types
     var filterType: FILTER_TYPE?
     var statType: STATS?
+    
+    
+    /// Values to compare to
     var int_comparee: Int?
     var str_comparee: String?
     
+    
+    /// Constructor for comparison purposes (internal)
+    ///
+    /// - Parameter _filterType: comparison type
     private init(_ _filterType: FILTER_TYPE) {
         filterType = _filterType
     }
     
+    
+    /// Constructor for string based filters
+    ///
+    /// - Parameter _comparee: string to compare to
     init(_ _comparee: String) {
         filterType = FILTER_TYPE.NAME_EQUALS
         str_comparee = _comparee
     }
     
+    
+    /// Constructor for int based filters
+    ///
+    /// - Parameter _comparee: Int to compare to
     init(_ _comparee: Int) {
         filterType = FILTER_TYPE.INT_GREATER_THAN
         int_comparee = _comparee
     }
     
+    
+    /// Comparators for external equivalencies
     static public let NAME_EQ  = SearchFilter(FILTER_TYPE.NAME_EQUALS)
     static public let NUM_EQ   = SearchFilter(FILTER_TYPE.NUM_EQUALS)
     static public let TYPE_EQ  = SearchFilter(FILTER_TYPE.TYPE_EQUALS)
     static public let STAT_GR  = SearchFilter(FILTER_TYPE.INT_GREATER_THAN)
     
     
+    /// Equator Method Overrides
     static func == (lhs: SearchFilter, rhs: SearchFilter) -> Bool {
         return lhs.generic_repr() == rhs.generic_repr()
     }
@@ -67,6 +89,11 @@ class SearchFilter: Equatable {
         return lhs == rhs.generic_repr()
     }
     
+    
+    
+    /// Returns a string based representation of this filter
+    ///
+    /// - Returns: String based repr of this filter
     func generic_repr() -> String {
         guard let filter = filterType else {
             return ""
@@ -93,6 +120,11 @@ class SearchFilter: Equatable {
         }
     }
     
+    
+    /// Determines if pokemon satifies this filter
+    ///
+    /// - Parameter x: Pokemon to test against
+    /// - Returns: Whether or not the pokemon satisfies conditions
     public func pred(x: Pokemon) -> Bool {
 
         switch filterType! {
@@ -121,6 +153,8 @@ class SearchFilter: Equatable {
         }
     }
     
+    
+    /// PUBLIC CONSTRUCTOR METHODS
     static func create_name_filter (name: String) -> SearchFilter {
         let filter = SearchFilter(name)
         filter.filterType = FILTER_TYPE.NAME_EQUALS

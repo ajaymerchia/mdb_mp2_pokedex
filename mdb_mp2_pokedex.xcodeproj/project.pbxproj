@@ -44,7 +44,6 @@
 		B7BC0557214C6A6600E1FF85 /* Favorites-initui.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC0556214C6A6600E1FF85 /* Favorites-initui.swift */; };
 		B7BC0559214C71FB00E1FF85 /* Favorites-table.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC0558214C71FB00E1FF85 /* Favorites-table.swift */; };
 		B7E020AD2148AB0700AE82A7 /* Welcome-initui.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E020AC2148AB0700AE82A7 /* Welcome-initui.swift */; };
-		B7E020AF2148B3C100AE82A7 /* brainstorming.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E020AE2148B3C100AE82A7 /* brainstorming.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +110,6 @@
 		B7BC0556214C6A6600E1FF85 /* Favorites-initui.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites-initui.swift"; sourceTree = "<group>"; };
 		B7BC0558214C71FB00E1FF85 /* Favorites-table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites-table.swift"; sourceTree = "<group>"; };
 		B7E020AC2148AB0700AE82A7 /* Welcome-initui.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Welcome-initui.swift"; sourceTree = "<group>"; };
-		B7E020AE2148B3C100AE82A7 /* brainstorming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brainstorming.swift; sourceTree = "<group>"; };
 		C2C250831C69016AE5420B87 /* Pods_mdb_mp2_pokedex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mdb_mp2_pokedex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6AA15914F2BD46E178DBF17 /* Pods-mdb_mp2_pokedexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdb_mp2_pokedexTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mdb_mp2_pokedexTests/Pods-mdb_mp2_pokedexTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA3F24FF26CF5B9F190D17B5 /* Pods-mdb_mp2_pokedex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdb_mp2_pokedex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mdb_mp2_pokedex/Pods-mdb_mp2_pokedex.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 				B73328A3214648CF0095BCDB /* LaunchScreen.storyboard */,
 				B73328A6214648CF0095BCDB /* Info.plist */,
 				B73328CE214648F30095BCDB /* rsrc */,
-				B7E020AE2148B3C100AE82A7 /* brainstorming.swift */,
 			);
 			path = mdb_mp2_pokedex;
 			sourceTree = "<group>";
@@ -548,7 +545,6 @@
 				B71AF701214B5CC800A63FD8 /* Welcome-search.swift in Sources */,
 				B79CDF0E214C668D0019956B /* Favorites-main.swift in Sources */,
 				B7039799214BBE2F00E16406 /* PokemonRow.swift in Sources */,
-				B7E020AF2148B3C100AE82A7 /* brainstorming.swift in Sources */,
 				B71AF6F9214AE5CC00A63FD8 /* SearchFilter.swift in Sources */,
 				B73328CB214648E80095BCDB /* PokemonGenerator.swift in Sources */,
 				B7039797214BA92200E16406 /* PokemonCell.swift in Sources */,

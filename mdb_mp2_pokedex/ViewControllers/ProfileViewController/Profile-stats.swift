@@ -9,6 +9,14 @@ import Foundation
 import UIKit
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    /// Establishes number of cells to do
+    ///
+    /// - Parameters:
+    ///   - tableView: <#tableView description#>
+    ///   - section: <#section description#>
+    /// - Returns: <#return value description#>
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Pokemon.statNames.count
     }
