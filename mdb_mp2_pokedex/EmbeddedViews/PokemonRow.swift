@@ -20,6 +20,7 @@ class PokemonRow: UITableViewCell {
         
         pokemon_name = UILabel(frame: CGRect(x: 75, y: 13, width: 300, height: 50))
         pokemon_name.textColor = .black
+        pokemon_name.font = UIFont(name: "Gentona-Book", size: 18)
 
         contentView.addSubview(pokemon_image)
         contentView.addSubview(pokemon_name)

@@ -39,9 +39,6 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
     var index_of_selected_filters: [Int] = []
     var qualifiedPokemon: [Pokemon] = []
     
-    var countDown: UILabel!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,8 +50,7 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
         init_buttons()
         init_grid()
         init_search()
-        
-       
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

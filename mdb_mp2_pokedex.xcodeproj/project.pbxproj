@@ -10,7 +10,6 @@
 		0FD3CEBC5424A2D88FA17BB7 /* Pods_mdb_mp2_pokedexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC67FAF57D3DD0551C863FA5 /* Pods_mdb_mp2_pokedexTests.framework */; };
 		1F3064A55A934EE3D8D578B7 /* Pods_mdb_mp2_pokedex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C250831C69016AE5420B87 /* Pods_mdb_mp2_pokedex.framework */; };
 		24BB667A7ED10B1996C04C78 /* Pods_mdb_mp2_pokedexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2345B92E1C9123BE5A561A12 /* Pods_mdb_mp2_pokedexUITests.framework */; };
-		B284C90B214CB3FA00542E5F /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284C90A214CB3FA00542E5F /* Font.swift */; };
 		B284C912214CBA9600542E5F /* CustomFont-Gentona.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B284C90F214CBA6E00542E5F /* CustomFont-Gentona.ttf */; };
 		B284C913214CBA9600542E5F /* CustomFont-Gentona-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B284C910214CBA7700542E5F /* CustomFont-Gentona-Italic.ttf */; };
 		B284C914214CBA9600542E5F /* CustomFont-Gentona-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B284C911214CBA7D00542E5F /* CustomFont-Gentona-Bold.ttf */; };
@@ -71,7 +70,6 @@
 		58CBACB1137DFC6BFE40F097 /* Pods-mdb_mp2_pokedexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdb_mp2_pokedexTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mdb_mp2_pokedexTests/Pods-mdb_mp2_pokedexTests.release.xcconfig"; sourceTree = "<group>"; };
 		641035CE109FA24793EA0550 /* Pods-mdb_mp2_pokedexUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdb_mp2_pokedexUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mdb_mp2_pokedexUITests/Pods-mdb_mp2_pokedexUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC67FAF57D3DD0551C863FA5 /* Pods_mdb_mp2_pokedexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mdb_mp2_pokedexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B284C90A214CB3FA00542E5F /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		B284C90F214CBA6E00542E5F /* CustomFont-Gentona.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CustomFont-Gentona.ttf"; sourceTree = "<group>"; };
 		B284C910214CBA7700542E5F /* CustomFont-Gentona-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CustomFont-Gentona-Italic.ttf"; sourceTree = "<group>"; };
 		B284C911214CBA7D00542E5F /* CustomFont-Gentona-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CustomFont-Gentona-Bold.ttf"; sourceTree = "<group>"; };
@@ -286,7 +284,6 @@
 				B73328C9214648E80095BCDB /* Pokemon.swift */,
 				B71AF6FA214B2CAC00A63FD8 /* rgba.swift */,
 				B73328C8214648E70095BCDB /* PokemonGenerator.swift */,
-				B284C90A214CB3FA00542E5F /* Font.swift */,
 			);
 			path = rsrc;
 			sourceTree = "<group>";
@@ -561,7 +558,6 @@
 				B7E020AD2148AB0700AE82A7 /* Welcome-initui.swift in Sources */,
 				B79CDF08214C4AF60019956B /* Profile-initui.swift in Sources */,
 				B71AF6F4214A0E7F00A63FD8 /* Welcome-filter.swift in Sources */,
-				B284C90B214CB3FA00542E5F /* Font.swift in Sources */,
 				B71AF6F22149C35600A63FD8 /* Filter-CellView.swift in Sources */,
 				B71AF6FB214B2CAC00A63FD8 /* rgba.swift in Sources */,
 				B79CDF0A214C4B070019956B /* Profile-stats.swift in Sources */,
