@@ -52,6 +52,18 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
         init_search()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        filter_buttons = []
+        filter_collection = []
+        selected_filters = []
+        index_of_selected_filters = []
+        qualifiedPokemon = []
+        
+        filterCollectionView.removeFromSuperview()
+        init_grid()
+        
+    }
 
     
     
