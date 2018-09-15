@@ -13,9 +13,7 @@ class FavoritesViewController: UIViewController {
     let PADDING:CGFloat = 20
     var WORKING_SPACE:CGFloat!
     var listView: UITableView!
-    
     var targetPokemon:Pokemon!
-    
     var favorites_from_storage:[Int] = []
     
     
@@ -23,7 +21,6 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
         
         WORKING_SPACE = view.frame.width - 2 * PADDING
-        // Do any additional setup after loading the view.
         init_nav()
         buildFavorites()
         addListView()

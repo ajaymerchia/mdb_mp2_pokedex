@@ -15,6 +15,7 @@ extension FavoritesViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.stop, target: self, action: #selector(go_back))
     }
     
+    ///Store favorites into an array 
     func buildFavorites() {
         let defaults = UserDefaults.standard
         

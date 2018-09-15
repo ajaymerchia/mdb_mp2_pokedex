@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 extension ProfileViewController {
     
-    
-    
     func initStats(){
         let WORKING_SPACE = view.frame.width - 2 * PADDING
         let above = addToFav.frame.maxY
@@ -78,6 +76,7 @@ extension ProfileViewController {
         
     }
     
+    ///Initializing buttons for favorites and search the web
     func initButton() {
         addToFav = UIButton(frame: CGRect(x: PADDING, y: 350, width: WORKING_SPACE/2, height: 50))
         addToFav.setTitle("♡ Favorite", for: .normal)
@@ -98,6 +97,7 @@ extension ProfileViewController {
         view.addSubview(searchWebButton)
     }
     
+    ///Accounts for removing or adding a pokemon to favorites upon hitting the favorites button
     @objc func favorite_handler(sender: UIButton) {
         if sender.isSelected {
             removePokemonFromFavorites()
@@ -149,12 +149,14 @@ extension ProfileViewController {
         UIApplication.shared.open(url)
     }
     
+    ///Changes the encoding of special characters to make it safe
     func makeURLSafe(url: String) -> String{
         var ret_url = url.lowercased()
         ret_url = ret_url.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         return ret_url
     }
     
+    ///Previously favorited pokemon are set to favorited state 
     func setFavoriteState() {
         let defaults = UserDefaults.standard
         guard let arr = defaults.array(forKey: "favorites") else {
