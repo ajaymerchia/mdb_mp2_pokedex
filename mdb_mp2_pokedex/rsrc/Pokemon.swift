@@ -31,18 +31,20 @@ class Pokemon {
  
     let name: String!
     let number: Int!
+    
     let attack: Int!
     let defense: Int!
     let health: Int!
     let specialAttack: Int!
     let specialDefense: Int!
-    let species: String!
     let speed: Int!
     let total: Int!
+    
+    let species: String!
     let types: [String]
     let imageUrl: String!
     let stats: [Int]!
-    let statNames = ["Attack", "Defense", "Health", "Special Attack", "Special Defense", "Total"]
+    static let statNames = ["Attack", "Defense", "Health", "Special Attack", "Special Defense", "Speed", "Total"]
     let uid: Int!
     
     init(name: String, number: Int, attack: Int, defense: Int, health: Int, spAttack: Int, spDef: Int, species: String, speed: Int, total: Int, types: [String], uid: Int) {
@@ -58,7 +60,7 @@ class Pokemon {
         self.total = total
         self.types = types
         self.imageUrl = "http://img.pokemondb.net/artwork/\(name.components(separatedBy: " ")[0].lowercased()).jpg"
-        self.stats = [self.attack, self.defense, self.health, self.specialAttack, self.specialDefense, self.total]
+        self.stats = [self.attack, self.defense, self.health, self.specialAttack, self.specialDefense, self.speed, self.total]
         self.uid = uid
     }
     

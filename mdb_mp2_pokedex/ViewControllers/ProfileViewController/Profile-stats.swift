@@ -10,7 +10,7 @@ import UIKit
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 11
+        return Pokemon.statNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -20,7 +20,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             subview.removeFromSuperview()
         }
         cell.awakeFromNib()
-        cell.stat_label.text = "hello, \(pokemonProfile.name!)\(indexPath.row)"
+        cell.stat_label.text = Pokemon.statNames[indexPath.row] + ": \(pokemonProfile.stats[indexPath.row])"
         cell.stat_logo.image = #imageLiteral(resourceName: "pokeball")
         
         return cell
