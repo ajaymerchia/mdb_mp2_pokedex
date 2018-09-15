@@ -29,7 +29,6 @@ extension WelcomeViewController {
         
         for raw_query in currSearch {
             var query_term:String = String(raw_query)
-            debugPrint(query_term)
             if let removable_index = query_term.index(of: "#") {
                 query_term.remove(at: removable_index)
             }

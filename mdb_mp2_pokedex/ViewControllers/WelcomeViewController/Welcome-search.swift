@@ -47,12 +47,10 @@ extension WelcomeViewController {
     
     func searchByActiveFilters() -> [Pokemon] {
         
-        debugPrint("Filtering For...")
         for filter in selected_filters {
             debugPrint(filter.generic_repr())
         }
         
-        debugPrint("Found Pokemon")
         
         var qualifiedPokemon:[Pokemon] = []
         for poke in PokemonGenerator.ALL_POKEMON {
@@ -70,7 +68,6 @@ extension WelcomeViewController {
             }
             if type_satisified && !attr_violated {
                 qualifiedPokemon.append(poke)
-                debugPrint(poke.name)
             }
         }
         
@@ -79,12 +76,10 @@ extension WelcomeViewController {
     
     func searchByUISearchBar() -> [Pokemon] {
         
-        debugPrint("Filtering For...")
         for filter in selected_filters {
             debugPrint(filter.generic_repr())
         }
         
-        debugPrint("Found Pokemon")
         
         var qualifiedPokemon:[Pokemon] = []
         for poke in PokemonGenerator.ALL_POKEMON {
