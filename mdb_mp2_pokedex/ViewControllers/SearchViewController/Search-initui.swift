@@ -11,8 +11,10 @@ import UIKit
 
 extension SearchViewController {
     func initNav() {
-        let access_favorites = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.organize, target: self, action: #selector(go_to_fav))
-        navigationItem.rightBarButtonItem = access_favorites
+        let access_favorites = UIBarButtonItem(title: "favorites", style: UIBarButtonItemStyle.done, target: self, action: #selector(go_to_fav))
+        
+        access_favorites.image = favoritesIcon
+        self.navigationItem.rightBarButtonItem = access_favorites
     }
     
     @objc func go_to_fav() {
@@ -56,7 +58,7 @@ extension SearchViewController {
         listView.register(PokemonRow.self, forCellReuseIdentifier: "pokemonRow")
         listView.delegate = self
         listView.dataSource = self
-        listView.rowHeight = 50
+        listView.rowHeight = 75
         view.addSubview(listView)
     }
     

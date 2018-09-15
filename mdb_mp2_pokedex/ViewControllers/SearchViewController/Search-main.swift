@@ -13,7 +13,7 @@ class SearchViewController: UIViewController {
     var pokemonResults:[Pokemon]!
     var gridView: UICollectionView!
     var listView: UITableView!
-    
+    let favoritesIcon = UIImage(named: "favorites")
     var targetPokemon: Pokemon!
 
     // UISpacing Components
