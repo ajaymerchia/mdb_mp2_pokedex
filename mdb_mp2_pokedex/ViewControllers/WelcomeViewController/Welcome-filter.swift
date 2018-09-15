@@ -64,7 +64,7 @@ extension WelcomeViewController {
         
         minimum_prompter.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {
             action in
-            self.deselect(attribute)
+            self.deselectCellWith(attribute: attribute)
         }))
         minimum_prompter.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { action in
             
@@ -72,12 +72,12 @@ extension WelcomeViewController {
         
             if response < 0 || response > 200 {
                 self.deselect(attribute)
+                self.deselectCellWith(attribute: attribute)
                 self.badPokemonAttrRange()
                 return
             }
             
             self.updateTextOfCellWith(attribute: attribute, to: response)
-//            self.getCellWith(type: attribute)?.points_selected.text = "\(response) - 200"
             self.addValueFilter(sender_label: attribute.lowercased(), minVal: response)
         }))
         
@@ -114,6 +114,15 @@ extension WelcomeViewController {
             button.isSelected = false
             if let ind = index_of_selected_filters.index(of: button.tag) {
                 index_of_selected_filters.remove(at: ind)
+            }
+        }
+    }
+    
+    
+    func deselectCellWith(attribute: String) {
+        for cell in filter_collection {
+            if cell.name_of_filter == attribute.lowercased() {
+                cell.filterImageButton.isSelected = false
             }
         }
     }

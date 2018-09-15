@@ -61,6 +61,8 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         targetPokemon = PokemonGenerator.ALL_POKEMON[favorites_from_storage[indexPath.row]]
         performSegue(withIdentifier: "Fav2Profile", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

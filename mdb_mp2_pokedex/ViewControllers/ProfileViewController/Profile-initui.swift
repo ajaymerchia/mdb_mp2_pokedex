@@ -54,7 +54,7 @@ extension ProfileViewController {
     func initText() {
         nameOfPoke = UILabel(frame: CGRect(x: 0, y:nameImage.frame.maxY, width: view.frame.width, height: 40))
         nameOfPoke.textAlignment = .center
-        nameOfPoke.text = pokemonProfile.name
+        nameOfPoke.text = "#\(pokemonProfile.number!): " + pokemonProfile.name
         nameOfPoke.font = UIFont(name: "Arial", size: 18)
 
         view.addSubview(nameOfPoke)

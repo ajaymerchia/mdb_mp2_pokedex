@@ -18,6 +18,7 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
     
     // UIComponents for Header
     var header_img: UIImageView!
+    var header_txt: UILabel!
     
     // UIComponents for SelectingFilters
     var filter_buttons: [FilterButton] = []
@@ -45,11 +46,13 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
         
         WORKING_SPACE = view.frame.width - 2 * PADDING
         //Initialize UI Components
-        init_img()
-        init_grid()
-        init_buttons()
         init_nav()
-        initializeSearch()
+        init_img()
+        init_text()
+        init_buttons()
+        init_grid()
+        
+        init_search()
         
         
     }

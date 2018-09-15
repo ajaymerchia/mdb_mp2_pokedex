@@ -56,6 +56,9 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         targetPokemon = pokemonResults[indexPath.row]
         performSegue(withIdentifier: "showProfileView", sender: self)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

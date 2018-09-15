@@ -10,26 +10,7 @@ import Foundation
 import UIKit
 
 extension WelcomeViewController {
-    func initializeSearch(){
-        searchBar = UISearchBar()
-        searchBar.delegate = self
-        searchBar.sizeToFit()
-        searchBar.placeholder = "Search by name or number!"
-        
-        let searchBarTextField = searchBar.value(forKey: "searchField") as! UITextField
-        searchBarTextField.tintColor = UIColor.flatBlueDark
-        
-        self.extendedLayoutIncludesOpaqueBars = true
-        
-        
-        navigationItem.titleView = searchBar
-        navigationController?.navigationBar.backgroundColor = UIColor(red:0.93, green:0.08, blue:0.08, alpha:1.0)
-        
-        
-        let tapOutside: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapOutside)
-        
-    }
+    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         // nuke existing filters
