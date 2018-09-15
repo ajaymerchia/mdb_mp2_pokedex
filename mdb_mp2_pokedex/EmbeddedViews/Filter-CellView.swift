@@ -23,6 +23,8 @@ class FilterCellView: UICollectionViewCell {
         
         let paddingX:CGFloat = 20
 
+        self.backgroundColor = rgba(255,255,255,0)
+        
         points_selected = UILabel(frame: CGRect(origin: CGPoint(x: contentView.frame.minX+paddingX, y: ( contentView.frame.midY)), size: CGSize(width: contentView.frame.width - 2 * paddingX, height: 20)))
         
         points_selected.textAlignment = .center

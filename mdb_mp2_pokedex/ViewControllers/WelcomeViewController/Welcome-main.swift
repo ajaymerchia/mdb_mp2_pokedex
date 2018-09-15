@@ -52,10 +52,13 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
         init_text()
         init_buttons()
         init_grid()
-        
+        init_background()
         init_search()
         
-        
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
