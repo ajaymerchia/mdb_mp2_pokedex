@@ -16,9 +16,9 @@ class PokemonRow: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        pokemon_image = UIImageView(frame: CGRect(x: 20, y: 10, width: 30, height: 30))
+        pokemon_image = UIImageView(frame: CGRect(x: 15, y: 10, width: 40, height: 40))
         
-        pokemon_name = UILabel(frame: CGRect(x: 35, y: 0, width: 300, height: 50))
+        pokemon_name = UILabel(frame: CGRect(x: 75, y: 13, width: 300, height: 50))
         pokemon_name.textColor = .black
 
         contentView.addSubview(pokemon_image)

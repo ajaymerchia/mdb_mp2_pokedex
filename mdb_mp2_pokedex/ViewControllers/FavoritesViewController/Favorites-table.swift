@@ -54,7 +54,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         listView.register(PokemonRow.self, forCellReuseIdentifier: "pokemonRow")
         listView.delegate = self
         listView.dataSource = self
-        listView.rowHeight = 50
+        listView.rowHeight = 75
         view.addSubview(listView)
     }
     
