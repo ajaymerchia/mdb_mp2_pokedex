@@ -28,7 +28,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate{
         
         cell.pokemon_name.text = curr_pokemon.name
         
-        cell.pokemon_name.text = "#\(curr_pokemon.number!) " + cell.pokemon_name.text!
+        cell.pokemon_name.text = "#\(curr_pokemon.number!) " + (cell.pokemon_name.text?.replacingOccurrences(of: "( ", with: "(").replacingOccurrences(of: " )", with: ")".replacingOccurrences(of: "  ", with: " ")))!
         
         if let imageUrl:URL = URL(string: curr_pokemon.imageUrl) {
             DispatchQueue.global().async {

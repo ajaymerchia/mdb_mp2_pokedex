@@ -67,7 +67,7 @@ extension SearchViewController {
         results_layout.minimumLineSpacing = 20
         results_layout.minimumInteritemSpacing = 4
         
-        gridView = UICollectionView(frame: CGRect(x: PADDING, y: UIApplication.shared.statusBarFrame.maxY, width: WORKING_SPACE, height: view.frame.height-UIApplication.shared.statusBarFrame.maxY-PADDING), collectionViewLayout: results_layout)
+        gridView = UICollectionView(frame: CGRect(x: PADDING, y: UIApplication.shared.statusBarFrame.maxY, width: WORKING_SPACE, height: view.frame.height-UIApplication.shared.statusBarFrame.maxY), collectionViewLayout: results_layout)
         
         gridView.register(PokemonCell.self, forCellWithReuseIdentifier: "pokemonCell")
 

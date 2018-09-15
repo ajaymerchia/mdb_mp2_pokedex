@@ -32,7 +32,7 @@ class PokemonCell: UICollectionViewCell {
         pokemon_name.textAlignment = .center
         pokemon_name.textColor = .black
         pokemon_name.adjustsFontSizeToFitWidth = true
-        pokemon_name.font = UIFont(name: "Gentona", size: 12)
+        pokemon_name.font = UIFont(name: "Gentona-Book", size: 20)
         
         pokemon_name.text = "hello mate"
         contentView.addSubview(pokemon_name)

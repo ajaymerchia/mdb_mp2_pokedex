@@ -43,11 +43,7 @@ extension WelcomeViewController {
         self.navigationItem.rightBarButtonItem = access_favorites
         
     }
-    
-    func init_background() {
-        filterCollectionView.backgroundColor = rgba(255,255,255,0)
-        self.view.backgroundColor = UIColor(red: 193, green: 190, blue: 196, alpha: 1.0)
-    }
+
     
     @objc func go_to_fav() {
         performSegue(withIdentifier: "Welcome2Fav", sender: self)
@@ -63,32 +59,27 @@ extension WelcomeViewController {
     }
     
     func init_buttons() {
-        filteredSearch = UIButton(frame: CGRect(x: 0, y: view.frame.height-40, width: view.frame.width/2, height: 40))
-        filteredSearch.setTitle("Search", for: .normal)
-//        filteredSearch.titleLabel!.font = UIFont(name: "Courier-BoldOblique", size: 24)
-//        
-//        for family in UIFont.familyNames.sorted() {
-//            let names = UIFont.fontNames(forFamilyName: family)
-//            print("Family: \(family) Font names: \(names)")
-//        }
-        filteredSearch.backgroundColor = UIColor.flatSkyBlue
-        filteredSearch.addTarget(self, action: #selector(filterSearch), for: .touchUpInside)
-        view.addSubview(filteredSearch)
-        
-        
-        randomizedSearch = UIButton(frame: CGRect(x: filteredSearch.frame.maxX, y: view.frame.height-40, width: view.frame.width/2, height: 40))
+        randomizedSearch = UIButton(frame: CGRect(x: 0, y: view.frame.height-40, width: view.frame.width/2, height: 40))
         randomizedSearch.setTitle("Randomize", for: .normal)
         randomizedSearch.titleLabel!.font = UIFont(name: "Gentona-Bold", size: 24)
         randomizedSearch.addTarget(self, action: #selector(randomSearch), for: .touchUpInside)
         randomizedSearch.backgroundColor = UIColor.flatSkyBlueDark
         
         view.addSubview(randomizedSearch)
+        
+        filteredSearch = UIButton(frame: CGRect(x: randomizedSearch.frame.maxX, y: view.frame.height-40, width: view.frame.width/2, height: 40))
+        filteredSearch.setTitle("Search", for: .normal)
+        filteredSearch.titleLabel!.font = UIFont(name: "Gentona-Bold", size: 24)
+        filteredSearch.backgroundColor = UIColor.flatSkyBlue
+        filteredSearch.addTarget(self, action: #selector(filterSearch), for: .touchUpInside)
+        view.addSubview(filteredSearch)
     }
     
     func init_text() {
         header_txt = UILabel(frame: CGRect(x: 0, y: header_img.frame.maxY, width: view.frame.width, height: 40))
         header_txt.text = "Find your Pokèmon!"
         header_txt.textAlignment = .center
+        header_txt.font = UIFont(name: "Gentona-Book", size: 28)
         view.addSubview(header_txt)
     }
  
@@ -105,9 +96,8 @@ extension WelcomeViewController {
         filterCollectionView.dataSource = self
         filterCollectionView.delegate = self
         filterCollectionView.layer.cornerRadius = 10
+        filterCollectionView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-        filterCollectionView.layer.borderWidth = 1
-        filterCollectionView.layer.borderColor = UIColor.flatGray.cgColor
         
         let gray:CGFloat = 242
         view.backgroundColor = rgba(gray,gray,gray,1)
