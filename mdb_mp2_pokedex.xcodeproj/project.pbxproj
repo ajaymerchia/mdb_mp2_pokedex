@@ -35,6 +35,7 @@
 		B73328CB214648E80095BCDB /* PokemonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73328C8214648E70095BCDB /* PokemonGenerator.swift */; };
 		B73328CC214648E80095BCDB /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73328C9214648E80095BCDB /* Pokemon.swift */; };
 		B73328CD214648E80095BCDB /* pokeData.json in Resources */ = {isa = PBXBuildFile; fileRef = B73328CA214648E80095BCDB /* pokeData.json */; };
+		B75F84E3214CD345005BAFE3 /* Profile-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75F84E2214CD345005BAFE3 /* Profile-logic.swift */; };
 		B79CDEFC214BCE8B0019956B /* StatsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CDEF8214BCE8A0019956B /* StatsCells.swift */; };
 		B79CDEFF214BDA3C0019956B /* Welcome-searchbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CDEFE214BDA3C0019956B /* Welcome-searchbar.swift */; };
 		B79CDF08214C4AF60019956B /* Profile-initui.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79CDF07214C4AF60019956B /* Profile-initui.swift */; };
@@ -101,6 +102,7 @@
 		B73328C8214648E70095BCDB /* PokemonGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonGenerator.swift; sourceTree = "<group>"; };
 		B73328C9214648E80095BCDB /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		B73328CA214648E80095BCDB /* pokeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokeData.json; sourceTree = "<group>"; };
+		B75F84E2214CD345005BAFE3 /* Profile-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile-logic.swift"; sourceTree = "<group>"; };
 		B79CDEF8214BCE8A0019956B /* StatsCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsCells.swift; sourceTree = "<group>"; };
 		B79CDEFE214BDA3C0019956B /* Welcome-searchbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Welcome-searchbar.swift"; sourceTree = "<group>"; };
 		B79CDF07214C4AF60019956B /* Profile-initui.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile-initui.swift"; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 			children = (
 				B79CDF0B214C4B210019956B /* Profile-main.swift */,
 				B79CDF07214C4AF60019956B /* Profile-initui.swift */,
+				B75F84E2214CD345005BAFE3 /* Profile-logic.swift */,
 				B79CDF09214C4B070019956B /* Profile-stats.swift */,
 			);
 			path = ProfileViewController;
@@ -550,6 +553,7 @@
 				B7039797214BA92200E16406 /* PokemonCell.swift in Sources */,
 				B7BC0557214C6A6600E1FF85 /* Favorites-initui.swift in Sources */,
 				B79CDF0C214C4B210019956B /* Profile-main.swift in Sources */,
+				B75F84E3214CD345005BAFE3 /* Profile-logic.swift in Sources */,
 				B71AF703214B61EB00A63FD8 /* Search-main.swift in Sources */,
 				B7E020AD2148AB0700AE82A7 /* Welcome-initui.swift in Sources */,
 				B79CDF08214C4AF60019956B /* Profile-initui.swift in Sources */,

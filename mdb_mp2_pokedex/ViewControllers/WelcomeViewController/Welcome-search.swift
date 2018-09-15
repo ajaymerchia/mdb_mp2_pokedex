@@ -9,16 +9,23 @@
 import Foundation
 import UIKit
 extension WelcomeViewController {
+    
+    
+    /// Button behavior for the filtered search
     @objc func filterSearch(){
         qualifiedPokemon = searchByActiveFilters()
         performSegue(withIdentifier: "toSearchResults", sender: self)
     }
     
+    
+    /// Button behavior for the search bar execution
     func searchBarSearch() {
         qualifiedPokemon = searchByUISearchBar()
         performSegue(withIdentifier: "toSearchResults", sender: self)
     }
     
+    
+    /// Random Generated Pokemon Search
     @objc func randomSearch() {
         var random_options_selected = Set<Int>()
         
@@ -37,7 +44,7 @@ extension WelcomeViewController {
         performSegue(withIdentifier: "toSearchResults", sender: self)
     }
     
-    
+    /// Assigns the searchResultsVC to hold the results of the search
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let searchVC = segue.destination as?  SearchViewController {
             searchVC.pokemonResults = qualifiedPokemon
@@ -45,6 +52,10 @@ extension WelcomeViewController {
         
     }
     
+    
+    /// Searches by the Filters selected
+    ///
+    /// - Returns: List of pokemon satisfying filters
     func searchByActiveFilters() -> [Pokemon] {
         
         for filter in selected_filters {
@@ -74,6 +85,10 @@ extension WelcomeViewController {
         return qualifiedPokemon
     }
     
+    
+    /// Searches given the query in the SearchBar
+    ///
+    /// - Returns: List of Pokemon to use
     func searchByUISearchBar() -> [Pokemon] {
         
         for filter in selected_filters {

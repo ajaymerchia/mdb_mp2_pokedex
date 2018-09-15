@@ -13,13 +13,13 @@ class PokemonCell: UICollectionViewCell {
     var pokemon_name: UILabel!
     var pokemon_image: UIImageView!
     
+    /// Initializes a cell with a pokemon image and text to describe it
     override func awakeFromNib() {
         super.awakeFromNib()
         
        
         pokemon_image = UIImageView(frame:  CGRect(x: contentView.frame.minX, y: contentView.frame.minY, width: contentView.frame.width, height: contentView.frame.height-20))
 
-//        pokemon_image = UIImageView(frame: contentView.frame)
         pokemon_image.image = UIImage(named: "pokeball")
         pokemon_image.contentMode = .scaleAspectFit
         

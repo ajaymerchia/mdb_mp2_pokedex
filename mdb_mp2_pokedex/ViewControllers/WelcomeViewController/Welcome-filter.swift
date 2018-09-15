@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 extension WelcomeViewController {
+    
+    /// Ensures that the shown filter represents the stored filter objects
     @objc func set_filter_button_state(sender: FilterButton) {
         if let ind = index_of_selected_filters.index(of: sender.tag) {
             index_of_selected_filters.remove(at: ind)
@@ -28,6 +30,9 @@ extension WelcomeViewController {
         
     }
     
+    /// Activates the filter associated with sender
+    ///
+    /// - Parameter sender: filter source
     func activate_filter(_ sender: FilterButton) {
         let sender_label = Pokemon.ALL_POKE_FILTERS[sender.tag]
 
@@ -38,6 +43,9 @@ extension WelcomeViewController {
         }
     }
     
+    /// Deactivates the filter associated with sender
+    ///
+    /// - Parameter sender: filter source
     func deactivate_filter(_ sender: FilterButton) {
         
         var remove_me:Int?
@@ -55,6 +63,10 @@ extension WelcomeViewController {
         selected_filters.remove(at: remove)
     }
     
+    
+    /// Gets the value via an alert screen
+    ///
+    /// - Parameter attribute: Gets the lower bound on the stat
     func getMinimumValue(_ attribute: String) {
         let minimum_prompter = UIAlertController(title: "Set Minimum " + attribute + " Points", message: nil, preferredStyle: .alert)
         
@@ -91,6 +103,12 @@ extension WelcomeViewController {
 
     }
     
+    
+    /// Adds a Value-based filter to the search queries
+    ///
+    /// - Parameters:
+    ///   - sender_label: label of the filter
+    ///   - minVal: value of the filter
     func addValueFilter(sender_label: String, minVal: Int) {
         switch sender_label {
         case "attack":
@@ -108,12 +126,17 @@ extension WelcomeViewController {
     }
     
     
+    /// Handles bad input from user
     func badPokemonAttrRange() {
         let alert = UIAlertController(title: "Oops", message: "Pokemon stats are only between 0 and 200, please adjust your entry.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Got it, Coach!", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
+    
+    /// Deselects the cell
+    ///
+    /// - Parameter _attribute: cell filter to deselect
     func deselect(_ _attribute: String) {
         if let button = getButtonWith(type: _attribute) {
             button.isSelected = false
@@ -123,7 +146,9 @@ extension WelcomeViewController {
         }
     }
     
-    
+    /// More reliable universal deselect
+    ///
+    /// - Parameter _attribute: cell filter to deselect
     func deselectCellWith(attribute: String) {
         for cell in filter_collection {
             if cell.name_of_filter == attribute.lowercased() {
@@ -132,10 +157,19 @@ extension WelcomeViewController {
         }
     }
     
+    
+    /// Returns a button associated with the TYPE
+    ///
+    /// - Parameter type: type of Filter
+    /// - Returns: Button pertaining to filter
     func getButtonWith(type: String) -> FilterButton? {
         return getCellWith(type: type)?.filterImageButton
     }
     
+    /// Returns a cell associated with the TYPE
+    ///
+    /// - Parameter type: type of Filter
+    /// - Returns: Cell pertaining to filter
     func getCellWith(type: String) -> FilterCellView? {
         guard let cellIndex = Pokemon.ALL_POKE_FILTERS.index(of: type) else {
             return nil
@@ -143,6 +177,12 @@ extension WelcomeViewController {
         return filter_collection[cellIndex]
     }
     
+    
+    /// Updates the String at the Text
+    ///
+    /// - Parameters:
+    ///   - attribute: filter to change
+    ///   - to: new text
     func updateTextOfCellWith(attribute: String, to: Int) {
         for cell in filter_collection {
             if cell.name_of_filter == attribute.lowercased() {

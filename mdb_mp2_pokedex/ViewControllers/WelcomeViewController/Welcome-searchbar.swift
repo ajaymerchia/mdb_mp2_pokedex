@@ -12,10 +12,12 @@ import UIKit
 extension WelcomeViewController {
     
     
+    /// Perform the search
+    ///
+    /// - Parameter searchBar: searchbar containing the query
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         // nuke existing filters
         selected_filters = []
-        
         searchBar.resignFirstResponder()
         
         if searchBar.text == "" {
@@ -25,8 +27,6 @@ extension WelcomeViewController {
         
         // based on content, add a new filter
         let currSearch = searchBar.text!.split(separator: " ")
-        
-        
         for raw_query in currSearch {
             var query_term:String = String(raw_query)
             if let removable_index = query_term.index(of: "#") {
@@ -47,6 +47,7 @@ extension WelcomeViewController {
     
     
     
+    /// Hides the keyboard
     @objc func dismissKeyboard(){
         navigationItem.titleView?.endEditing(true)
     }

@@ -40,6 +40,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         let curr_pokemon = PokemonGenerator.ALL_POKEMON[favorites_from_storage[indexPath.row]]
         
         // Append cleaned version of name to the pokemon's number
+        cell.pokemon_name.text = curr_pokemon.name
         cell.pokemon_name.text = "#\(curr_pokemon.number!) " + (cell.pokemon_name.text?.replacingOccurrences(of: "( ", with: "(").replacingOccurrences(of: " )", with: ")".replacingOccurrences(of: "  ", with: " ")))!
         
         // Get ImageURL and assign to cell

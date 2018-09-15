@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
  
+ /// Cells that hold statistics
  class StatsCells: UITableViewCell {
     var stat_label: UILabel!
     var stat_logo: UIImageView!
@@ -25,6 +26,8 @@ import UIKit
         stat_label.textColor = .black
         
         self.backgroundColor = rgba(255,255,255,0)
+        
+        selectionStyle = UITableViewCellSelectionStyle.none
         
         contentView.addSubview(stat_logo)
         contentView.addSubview(stat_label)

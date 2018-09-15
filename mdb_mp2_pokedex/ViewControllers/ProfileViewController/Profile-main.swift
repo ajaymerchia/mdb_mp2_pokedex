@@ -9,16 +9,24 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    var statsTable: UITableView!
-    var pokemonProfile: Pokemon!
+    // UI Spacing
+    let PADDING:CGFloat = 0
+    var WORKING_SPACE:CGFloat!
+    
+    // UI Components
     var nameImage: UIImageView!
     var nameOfPoke: UILabel!
     var species_and_type: UILabel!
+    
     var addToFav: UIButton!
     var searchWebButton: UIButton!
     
-    let PADDING:CGFloat = 0
-    var WORKING_SPACE:CGFloat!
+    var statsTable: UITableView!
+    
+    
+    // Data
+    var pokemonProfile: Pokemon!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

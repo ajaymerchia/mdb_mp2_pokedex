@@ -10,19 +10,8 @@ import Foundation
 import UIKit
 extension ProfileViewController {
     
-    func initStats(){
-        let WORKING_SPACE = view.frame.width - 2 * PADDING
-        let above = addToFav.frame.maxY
-        statsTable = UITableView(frame: CGRect(x:PADDING, y:above, width: WORKING_SPACE, height: view.frame.height - above))
-        statsTable.register(StatsCells.self, forCellReuseIdentifier: "statsRow")
-        statsTable.delegate = self
-        statsTable.dataSource = self
-        statsTable.rowHeight = 80
-        
-        view.addSubview(statsTable)
-    }
     
-    
+    /// Adds the main pokemon image from async web pull
     func initImg() {
         nameImage = UIImageView(frame: CGRect(x: 0, y: UIApplication.shared.statusBarFrame.maxY+50, width: 200, height: 200))
         nameImage.center = CGPoint(x: view.frame.width/2, y: UIApplication.shared.statusBarFrame.maxY+50 + nameImage.frame.height/2)
@@ -48,12 +37,12 @@ extension ProfileViewController {
         view.addSubview(nameImage)
     }
     
+    // Adds the name and overview details of the Pokemon
     func initText() {
         nameOfPoke = UILabel(frame: CGRect(x: 0, y:nameImage.frame.maxY, width: view.frame.width, height: 40))
         nameOfPoke.textAlignment = .center
         nameOfPoke.text = "#\(pokemonProfile.number!): " + pokemonProfile.name
         nameOfPoke.font = UIFont(name: "Gentona-Bold", size: 24)
-
         view.addSubview(nameOfPoke)
         
         
@@ -61,11 +50,9 @@ extension ProfileViewController {
         species_and_type.textAlignment = .center
         
         var strbuilder = ""
-        
         if pokemonProfile.species != "" {
             strbuilder += "Species: \(pokemonProfile.species!) || "
         }
-        
         if pokemonProfile.types.count != 0 {
             strbuilder += "Types: \(pokemonProfile.types.joined(separator: ", "))"
         }
@@ -81,11 +68,7 @@ extension ProfileViewController {
         addToFav = UIButton(frame: CGRect(x: PADDING, y: 350, width: WORKING_SPACE/2, height: 50))
         addToFav.setTitle("♡ Favorite", for: .normal)
         addToFav.setTitle("❤️ Unfavorite", for: .selected)
-        
         setFavoriteState()
-        
-        
-
         addToFav.addTarget(self, action: #selector(favorite_handler), for: .touchUpInside)
         addToFav.backgroundColor = UIColor.flatSkyBlue
         view.addSubview(addToFav)
@@ -97,90 +80,34 @@ extension ProfileViewController {
         view.addSubview(searchWebButton)
     }
     
-    ///Accounts for removing or adding a pokemon to favorites upon hitting the favorites button
-    @objc func favorite_handler(sender: UIButton) {
-        if sender.isSelected {
-            removePokemonFromFavorites()
-        } else {
-            addPokemonToFavorites()
-        }
-    }
     
-    @objc func addPokemonToFavorites() {
-        let defaults = UserDefaults.standard
-        
-        var _target:[Int] = [pokemonProfile.uid]
-        guard let arr = defaults.array(forKey: "favorites") else {
-            defaults.set(_target, forKey: "favorites")
-            return
-        }
-        
-        
-        let arr_casted = arr as! [Int]
-        
-        if !arr_casted.contains(pokemonProfile.uid) {
-            _target = _target + arr_casted
-            defaults.set(_target, forKey: "favorites")
-        }
-        
-        addToFav.isSelected = true
+    /// Adds the stats table UI component to the view
+    func initStats(){
+        let above = addToFav.frame.maxY
+        statsTable = UITableView(frame: CGRect(x:PADDING, y:above, width: WORKING_SPACE, height: view.frame.height - above))
+        statsTable.register(StatsCells.self, forCellReuseIdentifier: "statsRow")
+        statsTable.delegate = self
+        statsTable.dataSource = self
+        statsTable.rowHeight = 80
+        statsTable.backgroundColor = rgba(255,255,255,0)
 
-    }
-    
-    @objc func removePokemonFromFavorites() {
-        let defaults = UserDefaults.standard
         
-        if let arr = defaults.array(forKey: "favorites") {
-            if let arr_casted:[Int] = arr as? [Int] {
-                var arr_casted2 = arr_casted
-                let ind = arr_casted2.index(of: pokemonProfile.uid)!
-                arr_casted2.remove(at: ind)
-                defaults.set(arr_casted2, forKey: "favorites")
-            }
-        }
-        
-        addToFav.isSelected = false
-
+        view.addSubview(statsTable)
     }
     
-    @objc func searchWeb() {
-        let target_url = "https://google.com/search?q=" + makeURLSafe(url: pokemonProfile.name)
-        guard let url = URL(string: target_url) else { return }
-        UIApplication.shared.open(url)
-    }
-    
-    ///Changes the encoding of special characters to make it safe
-    func makeURLSafe(url: String) -> String{
-        var ret_url = url.lowercased()
-        ret_url = ret_url.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        return ret_url
-    }
-    
-    ///Previously favorited pokemon are set to favorited state 
-    func setFavoriteState() {
-        let defaults = UserDefaults.standard
-        guard let arr = defaults.array(forKey: "favorites") else {
-            return
-        }
-        
-        if let arr_casted:[Int] = arr as? [Int] {
-            if arr_casted.contains(pokemonProfile.uid) {
-                addToFav.isSelected = true
-            } else {
-                addToFav.isSelected = false
-            }
-            
-        }
-    }
-    
+    /// Sets background colors in this view
     func initBackgrounds() {
         let bottomColor = UIView(frame: CGRect(x: 0, y: addToFav.frame.maxY, width: view.frame.width, height: view.frame.height - addToFav.frame.maxX))
         
-        statsTable.backgroundColor = rgba(255,255,255,0)
         let gray:CGFloat = 240
         bottomColor.backgroundColor = rgba(gray,gray,gray,1)
         view.insertSubview(bottomColor, at: 0)
     }
+    
+    
+    
+    
+    
 }
 
 

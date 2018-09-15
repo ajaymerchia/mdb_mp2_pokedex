@@ -12,6 +12,8 @@ import ChameleonFramework
 
 extension WelcomeViewController {
     
+    
+    /// Build SearchBar
     func init_search(){
         searchBar = UISearchBar()
         searchBar.delegate = self
@@ -33,6 +35,8 @@ extension WelcomeViewController {
         
     }
     
+    
+    /// Build Navbar
     func init_nav() {
         navigationController?.navigationBar.barTintColor = UIColor.flatSkyBlue
         navigationController?.navigationBar.tintColor = .white
@@ -45,10 +49,13 @@ extension WelcomeViewController {
     }
 
     
+    /// Jump to Favorites
     @objc func go_to_fav() {
         performSegue(withIdentifier: "Welcome2Fav", sender: self)
     }
     
+    
+    /// Build header Image
     func init_img() {
         header_img = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width - 2*PADDING, height: 100))
         header_img.center = CGPoint(x: view.frame.width/2, y: view.frame.height/6)
@@ -58,6 +65,7 @@ extension WelcomeViewController {
         
     }
     
+    /// Build Buttons
     func init_buttons() {
         randomizedSearch = UIButton(frame: CGRect(x: 0, y: view.frame.height-40, width: view.frame.width/2, height: 40))
         randomizedSearch.setTitle("Randomize", for: .normal)
@@ -75,6 +83,7 @@ extension WelcomeViewController {
         view.addSubview(filteredSearch)
     }
     
+    /// Build prompt text
     func init_text() {
         header_txt = UILabel(frame: CGRect(x: 0, y: header_img.frame.maxY, width: view.frame.width, height: 40))
         header_txt.text = "Find your Pokèmon!"
@@ -83,6 +92,7 @@ extension WelcomeViewController {
         view.addSubview(header_txt)
     }
  
+    /// Create a grid view to hold the fitlers
     func init_grid() {
         let filter_grid_layout = UICollectionViewFlowLayout()
         filter_grid_layout.minimumLineSpacing = 10

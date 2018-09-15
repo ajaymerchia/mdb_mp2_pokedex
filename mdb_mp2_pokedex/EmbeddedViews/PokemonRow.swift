@@ -14,6 +14,8 @@ class PokemonRow: UITableViewCell {
     var pokemon_image: UIImageView!
     var pokemon_name: UILabel!
     
+    
+    /// Initializes a row with a pokemon image and text to describe it
     override func awakeFromNib() {
         super.awakeFromNib()
         pokemon_image = UIImageView(frame: CGRect(x: 15, y: 10, width: 40, height: 40))

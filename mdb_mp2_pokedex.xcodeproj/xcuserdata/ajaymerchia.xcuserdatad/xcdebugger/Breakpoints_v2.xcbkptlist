@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mdb_mp2_pokedex/Models/SearchFilter.swift"
-            timestampString = "558679931.6801521"
+            timestampString = "558684364.595464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "create_type_filter(type:)"
             landmarkType = "7">
          </BreakpointContent>

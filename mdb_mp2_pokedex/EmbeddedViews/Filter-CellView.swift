@@ -9,10 +9,13 @@
 import Foundation
 import UIKit
 
+
+/// Extends the UIButton so that we can apply value filters to it
 class FilterButton: UIButton {
     var isValueFilter: Bool = false
 }
 
+/// Cell that holds a filter for interaction
 class FilterCellView: UICollectionViewCell {
     var filterImageButton: FilterButton!
     var points_selected: UILabel!

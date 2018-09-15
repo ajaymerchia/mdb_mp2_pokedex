@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 extension SearchViewController {
+    
+    /// Build the Nav
     func initNav() {
         let access_favorites = UIBarButtonItem(title: "favorites", style: UIBarButtonItemStyle.done, target: self, action: #selector(go_to_fav))
         
@@ -17,10 +19,14 @@ extension SearchViewController {
         self.navigationItem.rightBarButtonItem = access_favorites
     }
     
+    
+    /// Jump to favorites screen
     @objc func go_to_fav() {
         performSegue(withIdentifier: "Search2Fav", sender: self)
     }
     
+    
+    /// Set up the navigation and layout for segmented control/grids
     func initLayouts () {
         // Segmented Control Switches
         segmentedControl = UISegmentedControl(items: ["List", "Grid"])
@@ -35,6 +41,8 @@ extension SearchViewController {
         switchLayout()
     }
     
+    
+    /// If Segmented control tapped, change the view accordingly
     @objc func switchLayout() {
         if segmentedControl.selectedSegmentIndex == 0 {
             gridView?.removeFromSuperview()
@@ -53,6 +61,8 @@ extension SearchViewController {
         }
     }
     
+    
+    /// Adds the TableView to the ViewController
     func addListView() {
         listView = UITableView(frame: CGRect(x: PADDING, y: UIApplication.shared.statusBarFrame.maxY, width: WORKING_SPACE, height: view.frame.height-UIApplication.shared.statusBarFrame.maxY-PADDING))
         listView.register(PokemonRow.self, forCellReuseIdentifier: "pokemonRow")
@@ -62,6 +72,7 @@ extension SearchViewController {
         view.addSubview(listView)
     }
     
+    /// Adds the CollectionView to the ViewController
     func addGridView() {
         let results_layout = UICollectionViewFlowLayout()
         results_layout.minimumLineSpacing = 20
