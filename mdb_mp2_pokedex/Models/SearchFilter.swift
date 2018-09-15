@@ -1,5 +1,6 @@
 //
 //  SearchFilter.swift
+//  This class abstracts filtering logic away from users for the Pokemon object. Accesses releveant parameters and determines whether or not the pokemon satisfies the condition. Usage abstracted away to static initializer functions
 //  mdb_mp2_pokedex
 //
 //  Created by Ajay Raj Merchia on 9/13/18.
@@ -9,6 +10,13 @@
 import Foundation
 
 class SearchFilter: Equatable {
+    
+    /// The different types of filters that can exist.
+    ///
+    /// - NAME_EQUALS: Type for checking if substring in pokemon
+    /// - NUM_EQUALS: Type for checking if pokemon id_number matches
+    /// - TYPE_EQUALS: Type for checking if the pokemen has a certain type
+    /// - INT_GREATER_THAN: for checking if stats exceed certain requirements
     enum FILTER_TYPE {
         case NAME_EQUALS
         case NUM_EQUALS

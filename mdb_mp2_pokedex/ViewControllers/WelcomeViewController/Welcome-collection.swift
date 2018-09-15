@@ -46,7 +46,7 @@ extension WelcomeViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
         
         for i in 0..<selected_filters.count {
-            if selected_filters[i].generic_repr() == Pokemon.ALL_POKE_FILTERS[indexPath.row].lowercased() {
+            if selected_filters[i].generic_repr().lowercased() == Pokemon.ALL_POKE_FILTERS[indexPath.row].lowercased() {
                 cell.filterImageButton.isSelected = true
                 if cell.filterImageButton.isValueFilter {
                     cell.points_selected.text = "\(selected_filters[i].int_comparee!) - 200"
