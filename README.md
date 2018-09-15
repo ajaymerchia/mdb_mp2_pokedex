@@ -12,4 +12,4 @@ In addition, the application allows users to save their favorite Pokemon, making
 
 ## Acknowledgements
 * MDB iOS Instructors/Mentors Max Miranda, Will Oakley, Shubham Gupta
-
+* Created by Kayli Jiang & Ajay Raj Merchia
