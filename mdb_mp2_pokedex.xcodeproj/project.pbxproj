@@ -10,6 +10,10 @@
 		0FD3CEBC5424A2D88FA17BB7 /* Pods_mdb_mp2_pokedexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC67FAF57D3DD0551C863FA5 /* Pods_mdb_mp2_pokedexTests.framework */; };
 		1F3064A55A934EE3D8D578B7 /* Pods_mdb_mp2_pokedex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C250831C69016AE5420B87 /* Pods_mdb_mp2_pokedex.framework */; };
 		24BB667A7ED10B1996C04C78 /* Pods_mdb_mp2_pokedexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2345B92E1C9123BE5A561A12 /* Pods_mdb_mp2_pokedexUITests.framework */; };
+		B284C90B214CB3FA00542E5F /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284C90A214CB3FA00542E5F /* Font.swift */; };
+		B284C912214CBA9600542E5F /* CustomFont-Gentona.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B284C90F214CBA6E00542E5F /* CustomFont-Gentona.ttf */; };
+		B284C913214CBA9600542E5F /* CustomFont-Gentona-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B284C910214CBA7700542E5F /* CustomFont-Gentona-Italic.ttf */; };
+		B284C914214CBA9600542E5F /* CustomFont-Gentona-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B284C911214CBA7D00542E5F /* CustomFont-Gentona-Bold.ttf */; };
 		B7039793214BA2BB00E16406 /* Search-table.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7039792214BA2BB00E16406 /* Search-table.swift */; };
 		B7039795214BA6F200E16406 /* Search-grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7039794214BA6F200E16406 /* Search-grid.swift */; };
 		B7039797214BA92200E16406 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7039796214BA92200E16406 /* PokemonCell.swift */; };
@@ -67,6 +71,10 @@
 		58CBACB1137DFC6BFE40F097 /* Pods-mdb_mp2_pokedexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdb_mp2_pokedexTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mdb_mp2_pokedexTests/Pods-mdb_mp2_pokedexTests.release.xcconfig"; sourceTree = "<group>"; };
 		641035CE109FA24793EA0550 /* Pods-mdb_mp2_pokedexUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdb_mp2_pokedexUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mdb_mp2_pokedexUITests/Pods-mdb_mp2_pokedexUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC67FAF57D3DD0551C863FA5 /* Pods_mdb_mp2_pokedexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mdb_mp2_pokedexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B284C90A214CB3FA00542E5F /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		B284C90F214CBA6E00542E5F /* CustomFont-Gentona.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CustomFont-Gentona.ttf"; sourceTree = "<group>"; };
+		B284C910214CBA7700542E5F /* CustomFont-Gentona-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CustomFont-Gentona-Italic.ttf"; sourceTree = "<group>"; };
+		B284C911214CBA7D00542E5F /* CustomFont-Gentona-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CustomFont-Gentona-Bold.ttf"; sourceTree = "<group>"; };
 		B4F2EA0F87B8733D83EC87E8 /* Pods-mdb_mp2_pokedexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdb_mp2_pokedexUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mdb_mp2_pokedexUITests/Pods-mdb_mp2_pokedexUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7039792214BA2BB00E16406 /* Search-table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search-table.swift"; sourceTree = "<group>"; };
 		B7039794214BA6F200E16406 /* Search-grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search-grid.swift"; sourceTree = "<group>"; };
@@ -80,9 +88,6 @@
 		B71AF700214B5CC800A63FD8 /* Welcome-search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Welcome-search.swift"; sourceTree = "<group>"; };
 		B71AF702214B61EB00A63FD8 /* Search-main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search-main.swift"; sourceTree = "<group>"; };
 		B71AF705214B6B5600A63FD8 /* Search-initui.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search-initui.swift"; sourceTree = "<group>"; };
-		B71AF707214B826B00A63FD8 /* Gentona-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gentona-Italic.otf"; sourceTree = "<group>"; };
-		B71AF708214B826B00A63FD8 /* Gentona.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gentona.otf; sourceTree = "<group>"; };
-		B71AF709214B826B00A63FD8 /* Gentona-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gentona-Bold.otf"; path = "mdb_mp2_pokedex/Gentona-Bold.otf"; sourceTree = SOURCE_ROOT; };
 		B7332897214648CD0095BCDB /* mdb_mp2_pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdb_mp2_pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B733289A214648CD0095BCDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B733289C214648CE0095BCDB /* Welcome-main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Welcome-main.swift"; sourceTree = "<group>"; };
@@ -165,6 +170,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B284C90C214CB94300542E5F /* FontGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				B284C90F214CBA6E00542E5F /* CustomFont-Gentona.ttf */,
+				B284C910214CBA7700542E5F /* CustomFont-Gentona-Italic.ttf */,
+				B284C911214CBA7D00542E5F /* CustomFont-Gentona-Bold.ttf */,
+			);
+			path = FontGenerator;
+			sourceTree = "<group>";
+		};
 		B71AF6F5214AE58500A63FD8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,9 +253,6 @@
 				B733289E214648CE0095BCDB /* Main.storyboard */,
 				B73328A1214648CE0095BCDB /* Assets.xcassets */,
 				B73328A3214648CF0095BCDB /* LaunchScreen.storyboard */,
-				B71AF709214B826B00A63FD8 /* Gentona-Bold.otf */,
-				B71AF707214B826B00A63FD8 /* Gentona-Italic.otf */,
-				B71AF708214B826B00A63FD8 /* Gentona.otf */,
 				B73328A6214648CF0095BCDB /* Info.plist */,
 				B73328CE214648F30095BCDB /* rsrc */,
 				B7E020AE2148B3C100AE82A7 /* brainstorming.swift */,
@@ -269,10 +281,12 @@
 		B73328CE214648F30095BCDB /* rsrc */ = {
 			isa = PBXGroup;
 			children = (
+				B284C90C214CB94300542E5F /* FontGenerator */,
 				B73328CA214648E80095BCDB /* pokeData.json */,
 				B73328C9214648E80095BCDB /* Pokemon.swift */,
 				B71AF6FA214B2CAC00A63FD8 /* rgba.swift */,
 				B73328C8214648E70095BCDB /* PokemonGenerator.swift */,
+				B284C90A214CB3FA00542E5F /* Font.swift */,
 			);
 			path = rsrc;
 			sourceTree = "<group>";
@@ -418,10 +432,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B284C914214CBA9600542E5F /* CustomFont-Gentona-Bold.ttf in Resources */,
 				B73328A5214648CF0095BCDB /* LaunchScreen.storyboard in Resources */,
 				B73328A2214648CE0095BCDB /* Assets.xcassets in Resources */,
+				B284C912214CBA9600542E5F /* CustomFont-Gentona.ttf in Resources */,
 				B73328CD214648E80095BCDB /* pokeData.json in Resources */,
 				B73328A0214648CE0095BCDB /* Main.storyboard in Resources */,
+				B284C913214CBA9600542E5F /* CustomFont-Gentona-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +561,7 @@
 				B7E020AD2148AB0700AE82A7 /* Welcome-initui.swift in Sources */,
 				B79CDF08214C4AF60019956B /* Profile-initui.swift in Sources */,
 				B71AF6F4214A0E7F00A63FD8 /* Welcome-filter.swift in Sources */,
+				B284C90B214CB3FA00542E5F /* Font.swift in Sources */,
 				B71AF6F22149C35600A63FD8 /* Filter-CellView.swift in Sources */,
 				B71AF6FB214B2CAC00A63FD8 /* rgba.swift in Sources */,
 				B79CDF0A214C4B070019956B /* Profile-stats.swift in Sources */,

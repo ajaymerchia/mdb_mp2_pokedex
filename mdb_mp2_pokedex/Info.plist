@@ -34,18 +34,18 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Gentona-Bold.otf</string>
-		<string>Gentona-Italic.otf</string>
-		<string>Gentona.otf</string>
-	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>CustomFont-Gentona.ttf</string>
+		<string>CustomFont-Gentona-Italic.ttf</string>
+		<string>CustomFont-Gentona-Bold.ttf</string>
 	</array>
 </dict>
 </plist>

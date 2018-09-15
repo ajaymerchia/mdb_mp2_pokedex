@@ -44,6 +44,11 @@ extension WelcomeViewController {
         
     }
     
+    func init_background() {
+        filterCollectionView.backgroundColor = rgba(255,255,255,0)
+        self.view.backgroundColor = UIColor(red: 193, green: 190, blue: 196, alpha: 1.0)
+    }
+    
     @objc func go_to_fav() {
         performSegue(withIdentifier: "Welcome2Fav", sender: self)
     }
