@@ -54,7 +54,7 @@ extension ProfileViewController {
         nameOfPoke = UILabel(frame: CGRect(x: 0, y:nameImage.frame.maxY, width: view.frame.width, height: 40))
         nameOfPoke.textAlignment = .center
         nameOfPoke.text = "#\(pokemonProfile.number!): " + pokemonProfile.name
-        nameOfPoke.font = UIFont(name: "Arial", size: 18)
+        nameOfPoke.font = UIFont(name: "Gentona-Bold", size: 24)
 
         view.addSubview(nameOfPoke)
         
@@ -73,7 +73,7 @@ extension ProfileViewController {
         }
         
         species_and_type.text = strbuilder
-        species_and_type.font = UIFont(name: "Arial", size: 12)
+        species_and_type.font = UIFont(name: "Gentona-BookItalic", size: 15)
         view.addSubview(species_and_type)
         
     }
@@ -92,7 +92,7 @@ extension ProfileViewController {
         view.addSubview(addToFav)
         
         searchWebButton = UIButton(frame: CGRect(x: addToFav.frame.maxX, y: addToFav.frame.minY, width: (view.frame.width - 2*PADDING)/2, height: 50))
-        searchWebButton.setTitle("Search the Web", for: .normal)
+        searchWebButton.setTitle("Search the Web ", for: .normal)
         searchWebButton.addTarget(self, action: #selector(searchWeb), for: .touchUpInside)
         searchWebButton.backgroundColor = UIColor.flatSkyBlueDark
         view.addSubview(searchWebButton)

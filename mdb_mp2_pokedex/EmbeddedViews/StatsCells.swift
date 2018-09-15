@@ -12,16 +12,16 @@ import UIKit
  class StatsCells: UITableViewCell {
     var stat_label: UILabel!
     var stat_logo: UIImageView!
-    
+    let offSet: CGFloat! = 25
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        stat_logo = UIImageView(frame: CGRect(x: 10, y: 10, width: 60, height: 60))
+        stat_logo = UIImageView(frame: CGRect(x: 10 + offSet, y: 10, width: 60, height: 60))
         stat_logo.image = #imageLiteral(resourceName: "pokeball")
         
-        stat_label = UILabel(frame: CGRect(x: 90, y: 20, width: 300, height: 40))
+        stat_label = UILabel(frame: CGRect(x: stat_logo.frame.maxX + offSet, y: 20, width: 300, height: 40))
         
-        stat_label.font = UIFont(name: "Gentona-Bold", size: 30)
+        stat_label.font = UIFont(name: "Gentona-Book", size: 22)
         stat_label.textColor = .black
         
         self.backgroundColor = rgba(255,255,255,0)

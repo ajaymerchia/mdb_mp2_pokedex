@@ -39,9 +39,6 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
     var index_of_selected_filters: [Int] = []
     var qualifiedPokemon: [Pokemon] = []
     
-    var countDown: UILabel!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,10 +52,6 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
         init_background()
         init_search()
         
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font names: \(names)")
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
