@@ -29,9 +29,10 @@ extension ProfileViewController {
     func initImg() {
         nameImage = UIImageView(frame: CGRect(x: 0, y: UIApplication.shared.statusBarFrame.maxY+50, width: 200, height: 200))
         nameImage.center = CGPoint(x: view.frame.width/2, y: UIApplication.shared.statusBarFrame.maxY+50 + nameImage.frame.height/2)
+        nameImage.contentMode = .scaleAspectFit
+        
         if let imageUrl:URL = URL(string: pokemonProfile.imageUrl) {
             DispatchQueue.global().async {
-                
                 let data = try? Data(contentsOf: imageUrl)
                 DispatchQueue.main.async {
                     if let retrievedImage = data {
@@ -47,7 +48,6 @@ extension ProfileViewController {
             nameImage.image = #imageLiteral(resourceName: "pokeball")
         }
         
-        
         view.addSubview(nameImage)
     }
     
@@ -59,6 +59,7 @@ extension ProfileViewController {
 
         view.addSubview(nameOfPoke)
         
+        
         species_and_type = UILabel(frame: CGRect(x: 0, y:nameOfPoke.frame.maxY, width: view.frame.width, height: 20))
         species_and_type.textAlignment = .center
         species_and_type.text = "Species: \(pokemonProfile.species!) || Types: \(pokemonProfile.types.joined(separator: ", "))"
@@ -69,16 +70,30 @@ extension ProfileViewController {
     
     func initButton() {
         addToFav = UIButton(frame: CGRect(x: PADDING, y: 350, width: WORKING_SPACE/2, height: 50))
-        addToFav.setTitle("Add to Favorites", for: .normal)
-        addToFav.addTarget(self, action: #selector(addPokemonToFavorites), for: .touchUpInside)
+        addToFav.setTitle("♡ Favorite", for: .normal)
+        addToFav.setTitle("❤️ Unfavorite", for: .selected)
+        
+        setFavoriteState()
+        
+        
+
+        addToFav.addTarget(self, action: #selector(favorite_handler), for: .touchUpInside)
         addToFav.backgroundColor = UIColor.flatBlueDark
         view.addSubview(addToFav)
         
-        addToFav = UIButton(frame: CGRect(x: addToFav.frame.maxX, y: addToFav.frame.minY, width: (view.frame.width - 40)/2, height: 50))
-        addToFav.setTitle("Search the Web", for: .normal)
-        addToFav.addTarget(self, action: #selector(searchWeb), for: .touchUpInside)
-        addToFav.backgroundColor = UIColor.flatBlue
-        view.addSubview(addToFav)
+        searchWebButton = UIButton(frame: CGRect(x: addToFav.frame.maxX, y: addToFav.frame.minY, width: (view.frame.width - 40)/2, height: 50))
+        searchWebButton.setTitle("Search the Web", for: .normal)
+        searchWebButton.addTarget(self, action: #selector(searchWeb), for: .touchUpInside)
+        searchWebButton.backgroundColor = UIColor.flatBlue
+        view.addSubview(searchWebButton)
+    }
+    
+    @objc func favorite_handler(sender: UIButton) {
+        if sender.isSelected {
+            removePokemonFromFavorites()
+        } else {
+            addPokemonToFavorites()
+        }
     }
     
     @objc func addPokemonToFavorites() {
@@ -98,8 +113,22 @@ extension ProfileViewController {
             defaults.set(_target, forKey: "favorites")
         }
         
-        debugPrint(defaults)
+        addToFav.isSelected = true
+    }
+    
+    @objc func removePokemonFromFavorites() {
+        let defaults = UserDefaults.standard
         
+        if let arr = defaults.array(forKey: "favorites") {
+            if let arr_casted:[Int] = arr as? [Int] {
+                var arr_casted2 = arr_casted
+                let ind = arr_casted2.index(of: pokemonProfile.uid)!
+                arr_casted2.remove(at: ind)
+                defaults.set(arr_casted2, forKey: "favorites")
+            }
+        }
+        
+        addToFav.isSelected = false
     }
     
     @objc func searchWeb() {
@@ -112,6 +141,22 @@ extension ProfileViewController {
         var ret_url = url.lowercased()
         ret_url = ret_url.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         return ret_url
+    }
+    
+    func setFavoriteState() {
+        let defaults = UserDefaults.standard
+        guard let arr = defaults.array(forKey: "favorites") else {
+            return
+        }
+        
+        if let arr_casted:[Int] = arr as? [Int] {
+            if arr_casted.contains(pokemonProfile.uid) {
+                addToFav.isSelected = true
+            } else {
+                addToFav.isSelected = false
+            }
+            
+        }
     }
 }
 

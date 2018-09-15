@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     var nameOfPoke: UILabel!
     var species_and_type: UILabel!
     var addToFav: UIButton!
+    var searchWebButton: UIButton!
     
     let PADDING:CGFloat = 20
     var WORKING_SPACE:CGFloat!
