@@ -22,7 +22,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         cell.awakeFromNib()
         cell.stat_label.text = Pokemon.statNames[indexPath.row] + ": \(pokemonProfile.stats[indexPath.row])"
         cell.stat_logo.image = UIImage(named: Pokemon.statNames[indexPath.row].lowercased().replacingOccurrences(of: " ", with: "_"))
-        
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
 }

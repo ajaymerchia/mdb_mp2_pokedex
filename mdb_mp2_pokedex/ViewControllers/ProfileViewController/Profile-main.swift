@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController {
     var addToFav: UIButton!
     var searchWebButton: UIButton!
     
-    let PADDING:CGFloat = 20
+    let PADDING:CGFloat = 0
     var WORKING_SPACE:CGFloat!
     
     override func viewDidLoad() {
@@ -33,6 +33,7 @@ class ProfileViewController: UIViewController {
         initText()
         initButton()
         initStats()
+        initBackgrounds()
     }
     
     

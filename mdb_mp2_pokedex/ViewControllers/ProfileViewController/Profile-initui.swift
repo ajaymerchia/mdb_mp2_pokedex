@@ -13,7 +13,6 @@ extension ProfileViewController {
     
     
     func initStats(){
-        let PADDING: CGFloat = 20
         let WORKING_SPACE = view.frame.width - 2 * PADDING
         let above = addToFav.frame.maxY
         statsTable = UITableView(frame: CGRect(x:PADDING, y:above, width: WORKING_SPACE, height: view.frame.height - above))
@@ -62,7 +61,18 @@ extension ProfileViewController {
         
         species_and_type = UILabel(frame: CGRect(x: 0, y:nameOfPoke.frame.maxY, width: view.frame.width, height: 20))
         species_and_type.textAlignment = .center
-        species_and_type.text = "Species: \(pokemonProfile.species!) || Types: \(pokemonProfile.types.joined(separator: ", "))"
+        
+        var strbuilder = ""
+        
+        if pokemonProfile.species != "" {
+            strbuilder += "Species: \(pokemonProfile.species!) || "
+        }
+        
+        if pokemonProfile.types.count != 0 {
+            strbuilder += "Types: \(pokemonProfile.types.joined(separator: ", "))"
+        }
+        
+        species_and_type.text = strbuilder
         species_and_type.font = UIFont(name: "Arial", size: 12)
         view.addSubview(species_and_type)
         
@@ -78,13 +88,13 @@ extension ProfileViewController {
         
 
         addToFav.addTarget(self, action: #selector(favorite_handler), for: .touchUpInside)
-        addToFav.backgroundColor = UIColor.flatBlueDark
+        addToFav.backgroundColor = UIColor.flatSkyBlue
         view.addSubview(addToFav)
         
-        searchWebButton = UIButton(frame: CGRect(x: addToFav.frame.maxX, y: addToFav.frame.minY, width: (view.frame.width - 40)/2, height: 50))
+        searchWebButton = UIButton(frame: CGRect(x: addToFav.frame.maxX, y: addToFav.frame.minY, width: (view.frame.width - 2*PADDING)/2, height: 50))
         searchWebButton.setTitle("Search the Web", for: .normal)
         searchWebButton.addTarget(self, action: #selector(searchWeb), for: .touchUpInside)
-        searchWebButton.backgroundColor = UIColor.flatBlue
+        searchWebButton.backgroundColor = UIColor.flatSkyBlueDark
         view.addSubview(searchWebButton)
     }
     
@@ -114,6 +124,7 @@ extension ProfileViewController {
         }
         
         addToFav.isSelected = true
+
     }
     
     @objc func removePokemonFromFavorites() {
@@ -129,6 +140,7 @@ extension ProfileViewController {
         }
         
         addToFav.isSelected = false
+
     }
     
     @objc func searchWeb() {
@@ -157,6 +169,15 @@ extension ProfileViewController {
             }
             
         }
+    }
+    
+    func initBackgrounds() {
+        let bottomColor = UIView(frame: CGRect(x: 0, y: addToFav.frame.maxY, width: view.frame.width, height: view.frame.height - addToFav.frame.maxX))
+        
+        statsTable.backgroundColor = rgba(255,255,255,0)
+        let gray:CGFloat = 240
+        bottomColor.backgroundColor = rgba(gray,gray,gray,1)
+        view.insertSubview(bottomColor, at: 0)
     }
 }
 
